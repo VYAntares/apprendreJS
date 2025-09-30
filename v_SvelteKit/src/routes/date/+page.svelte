@@ -4,13 +4,16 @@
 	let date = '';
 	
 	function obtenirDate() {
-		heure = data.date;
+		date = data.date;
 	}
 </script>
 
 <h1>Quelle date sommes-nous ?</h1>
 <button on:click={obtenirDate}>Obtenir la date</button>
-<p>{dispatchEvent ? `Nous sommes le ${date}` : ''}</p>
+<p>{date ? `Nous sommes le ${date}` : ''}</p>
 
 <br><br>
-<a href="/heure">Aller à la page heure</a>
+<ul>
+	<li><a href="/heure">Aller à la page heure</a></li>
+	<li><a href="/">Retour à l'acceuil</a></li>
+</ul>
