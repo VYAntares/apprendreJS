@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Commander</title>
+</head>
+<body>
+    <div style="text-align: right;">
+        <span id="username"></span>
+        <button id="logoutBtn">Logout</button>
+    </div>
+
+    <h1>Commander des articles</h1>
+    
+    <form id="orderForm">
+        <table border="1" cellpadding="10">
+            <thead>
+                <tr>
+                    <th>Article</th>
+                    <th>Description</th>
+                    <th>Quantité</th>
+                </tr>
+            </thead>
+            <tbody id="productsList">
+            </tbody>
+        </table>
+        <br>
+        <button type="submit">Order</button>
+    </form>
+
+    <p id="message" style="color: green;"></p>
+
+    <script>
+        // Vérifier l'authentification
+        fetch('/api/check-session')
+            .then(res => res.json())
+            .then(data => {
+                if (!data.authenticated || data.role !== 'client') {
+                    window.location.href = '/';
+                } else {
+                    document.getElementById('username').textContent = data.username;
+                }
+            });
+
+        // Logout
+        document.getElementById('logoutBtn').addEventListener('click', async () => {
+            await fetch('/api/logout', { method: 'POST' });
+            window.location.href = '/';
+        });
+
+        // Charger les produits
+        fetch('/api/products')
+            .then(res => res.json())
+            .then(products => {
+                const tbody = document.getElementById('productsList');
+                products.forEach(product => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>${product.name}</td>
+                        <td>${product.description}</td>
+                        <td><input type="number" name="quantity_${product.id}" min="0" value="0" style="width: 60px;"></td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            });
+
+        // Soumettre la commande
+        document.getElementById('orderForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const items = [];
+            
+            for (const [key, value] of formData.entries()) {
+                if (key.startsWith('quantity_')) {
+                    const productId = key.replace('quantity_', '');
+                    const quantity = parseInt(value);
+                    if (quantity > 0) {
+                        items.push({ product_id: parseInt(productId), quantity });
+                    }
+                }
+            }
+            
+            if (items.length === 0) {
+                alert('Veuillez sélectionner au moins un article');
+                return;
+            }
+            
+            const response = await fetch('/api/orders', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ items })
+            });
+            
+            if (response.ok) {
+                document.getElementById('message').textContent = 'Commande envoyée avec succès!';
+                
+                // Réinitialiser le formulaire
+                e.target.reset();
+                
+                // Effacer le message après 3 secondes
+                setTimeout(() => {
+                    document.getElementById('message').textContent = '';
+                }, 3000);
+            } else {
+                alert('Erreur lors de l\'envoi de la commande');
+            }
+        });
+    </script>
+</body>
+</html>

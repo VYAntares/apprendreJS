@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Historique des commandes</title>
+</head>
+<body>
+    <div style="text-align: right;">
+        <button onclick="window.location.href='/admin.html'">Retour aux commandes en attente</button>
+        <button id="logoutBtn">Logout</button>
+    </div>
+
+    <h1>Historique des commandes traitées</h1>
+    
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Client</th>
+                <th>Date de traitement</th>
+                <th>Articles traités</th>
+            </tr>
+        </thead>
+        <tbody id="historyList">
+        </tbody>
+    </table>
+
+    <p id="noHistory" style="display: none;">Aucune commande traitée</p>
+
+    <script>
+        // Vérifier l'authentification
+        fetch('/api/check-session')
+            .then(res => res.json())
+            .then(data => {
+                if (!data.authenticated || data.role !== 'admin') {
+                    window.location.href = '/';
+                }
+            });
+
+        // Logout
+        document.getElementById('logoutBtn').addEventListener('click', async () => {
+            await fetch('/api/logout', { method: 'POST' });
+            window.location.href = '/';
+        });
+
+        // Charger l'historique
+        fetch('/api/orders/history')
+            .then(res => res.json())
+            .then(orders => {
+                const tbody = document.getElementById('historyList');
+                tbody.innerHTML = '';
+                
+                if (orders.length === 0) {
+                    document.getElementById('noHistory').style.display = 'block';
+                } else {
+                    document.getElementById('noHistory').style.display = 'none';
+                    
+                    orders.forEach(order => {
+                        const tr = document.createElement('tr');
+                        const date = new Date(order.processed_at).toLocaleString('fr-FR');
+                        
+                        // Formater les articles
+                        const itemsText = order.items
+                            .map(item => `${item.name} (${item.quantity})`)
+                            .join(', ');
+                        
+                        tr.innerHTML = `
+                            <td>${order.id}</td>
+                            <td>${order.username}</td>
+                            <td>${date}</td>
+                            <td>${itemsText}</td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+                }
+            });
+    </script>
+</body>
+</html>

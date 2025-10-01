@@ -1,0 +1,14 @@
+{
+  "name": "shop-sqlite",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^9.6.0",
+    "better-sqlite3-session-store": "^0.1.0",
+    "express": "^4.21.2",
+    "express-session": "^1.18.2"
+  }
+}

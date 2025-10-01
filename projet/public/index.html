@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Connexion</h1>
+    <form id="loginForm">
+        <div>
+            <label>Nom d'utilisateur:</label><br>
+            <input type="text" id="username" required>
+        </div>
+        <br>
+        <div>
+            <label>Mot de passe:</label><br>
+            <input type="password" id="password" required>
+        </div>
+        <br>
+        <button type="submit">Se connecter</button>
+    </form>
+    <p id="error" style="color: red;"></p>
+
+    <script>
+        // Vérifier si déjà connecté
+        fetch('/api/check-session')
+            .then(res => res.json())
+            .then(data => {
+                if (data.authenticated) {
+                    if (data.role === 'client') {
+                        window.location.href = '/client.html';
+                    } else if (data.role === 'admin') {
+                        window.location.href = '/admin.html';
+                    }
+                }
+            });
+
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            const response = await fetch('/api/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            });
+            
+            const data = await response.json();
+            
+            if (data.success) {
+                if (data.role === 'client') {
+                    window.location.href = '/client.html';
+                } else if (data.role === 'admin') {
+                    window.location.href = '/admin.html';
+                }
+            } else {
+                document.getElementById('error').textContent = 'Identifiants incorrects';
+            }
+        });
+    </script>
+</body>
+</html>
