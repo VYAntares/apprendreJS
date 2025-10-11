@@ -1,0 +1,51 @@
+id,name,description,price,stock,category,image_path
+BE1,Bells 160,Letter A,2.00,500,Bells,/products/bells/BellkeyringAlphabet.jpg
+BE2,Bells 161,Letter B,2.00,500,Bells,/products/bells/BellkeyringAlphabet.jpg
+BE3,Bells 162,Letter C,2.00,500,Bells,/products/bells/BellkeyringAlphabet.jpg
+BE4,Bells 163,Letter D,2.00,500,Bells,/products/bells/BellkeyringAlphabet.jpg
+BE5,Bells 164,Letter E,2.00,500,Bells,/products/bells/BellkeyringAlphabet.jpg
+BE6,Bells 165,Letter F,2.00,500,Bells,/products/bells/BellkeyringAlphabet.jpg
+BE7,Bells 166,Letter G,2.00,500,Bells,/products/bells/BellkeyringAlphabet.jpg
+BE8,Bells 167,Letter H,2.00,500,Bells,/products/bells/BellkeyringAlphabet.jpg
+BE9,Bells 168,Letter I,2.00,500,Bells,/products/bells/BellkeyringAlphabet.jpg
+BE10,Bells 169,Letter J,2.00,500,Bells,/products/bells/BellkeyringAlphabet.jpg
+BE11,Bells 170,Letter K,2.00,500,Bells,/products/bells/BellkeyringAlphabet.jpg
+BE12,Bells 171,Letter L,2.00,500,Bells,/products/bells/BellkeyringAlphabet.jpg
+BE13,Bells 172,Letter M,2.00,500,Bells,/products/bells/BellkeyringAlphabet.jpg
+BE14,Bells 173,Letter N,2.00,500,Bells,/products/bells/BellkeyringAlphabet.jpg
+BE15,Bells 174,Letter O,2.00,500,Bells,/products/bells/BellkeyringAlphabet.jpg
+BE16,Bells 175,Letter P,2.00,500,Bells,/products/bells/BellkeyringAlphabet.jpg
+BE17,Bells 176,Letter Q,2.00,500,Bells,/products/bells/BellkeyringAlphabet.jpg
+BE18,Bells 177,Letter R,2.00,500,Bells,/products/bells/BellkeyringAlphabet.jpg
+BE19,Bells 178,Letter S,2.00,500,Bells,/products/bells/BellkeyringAlphabet.jpg
+BE20,Bells 179,Letter T,2.00,500,Bells,/products/bells/BellkeyringAlphabet.jpg
+BE21,Bells 180,Letter U,2.00,500,Bells,/products/bells/BellkeyringAlphabet.jpg
+BE22,Bells 181,Letter V,2.00,500,Bells,/products/bells/BellkeyringAlphabet.jpg
+BE23,Bells 182,Letter W,2.00,500,Bells,/products/bells/BellkeyringAlphabet.jpg
+BE24,Bells 183,Letter X,2.00,500,Bells,/products/bells/BellkeyringAlphabet.jpg
+BE25,Bells 184,Letter Y,2.00,500,Bells,/products/bells/BellkeyringAlphabet.jpg
+BE26,Bells 185,Letter Z,2.00,500,Bells,/products/bells/BellkeyringAlphabet.jpg
+BE27,Bells 148 b,Bell red Switzerland,2.00,500,Bells,/products/bells/Bells148b.jpg
+BE28,Bells 149 B,Bell red Switzerland,2.00,500,Bells,/products/bells/Bells149B.jpg
+BE29,Bells 46,ringing bell,2.00,500,Bells,/products/bells/Bells46.jpg
+BE30,Bells 47,Traditionnal ringing bell,2.00,500,Bells,/products/bells/Bells47.jpg
+BE31,Bells 295,SWISS Bell keychain Gold,2.00,500,Bells,/products/bells/Bells295.jpg
+BE32,Bells 330,Bell poya 20 cm,4.80,500,Bells,/products/bells/Bells330.jpg
+BE33,Bells 331,Bell poya 14.5 cm,4.00,500,Bells,/products/bells/Bells331.jpg
+BE34,Bells 152,Keyring Bell poya 15 cm,4.80,500,Bells,/products/bells/Bells152.jpg
+BE35,Bells 332,Bell flower bouquet 18 cm,4.80,500,Bells,/products/bells/Bells332.jpg
+BE36,Bells 333,Bell flower bouquet 14.5 cm,4.00,500,Bells,/products/bells/Bells333.jpg
+BE37,Bells 153,Bell flower bouquet 15 cm,3.50,500,Bells,/products/bells/Bells153.jpg
+BE38,Bells 334,Bell cow 18 cm,4.80,500,Bells,/products/bells/Bells334.jpg
+BE39,Bells 335,Bell cow 14.5 cm,4.00,500,Bells,/products/bells/Bells335.jpg
+BE40,Bells 154,Bell cow 15 cm,3.50,500,Bells,/products/bells/Bells154.jpg
+BE41,Bells 11,Table bell Cow,3.00,500,Bells,/products/bells/Bells11.jpg
+BE42,Bells 68,Table bell Zermatt,3.00,500,Bells,/products/bells/Bells68.jpg
+BE43,Bells 75,Table bell Genève,3.00,500,Bells,/products/bells/Bells75.jpg
+BE44,Bells 76,Table bell Vaud,3.00,500,Bells,/products/bells/Bells76.jpg
+BE45,Bells 77,Table bell Gruyères,3.00,500,Bells,/products/bells/Bells77.jpg
+BE46,Bells 106,Table bell Switzerland,3.00,500,Bells,/products/bells/Bells106.jpg
+BE47,Bells 107,Table bell Genève,3.00,500,Bells,/products/bells/Bells107.jpg
+BE48,Bells 108,Table bell Bern,3.00,500,Bells,/products/bells/Bells108.jpg
+BE49,Bells 109,Table bell Valais,3.00,500,Bells,/products/bells/Bells109.jpg
+BE50,Bells 110,Table bell Matterhorn,3.00,500,Bells,/products/bells/Bells110.jpg

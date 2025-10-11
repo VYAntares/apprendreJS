@@ -1,0 +1,26 @@
+id,name,description,price,stock,category,image_path
+H1,Hats 1 B,Swiss flag striped beanie black,3.50,500,Hats,/products/hats/B1.jpg
+H2,Hats 2 B,Swiss flag striped beanie pink,3.50,500,Hats,/products/hats/B2.jpg
+H3,Hats 3 B,Swiss flag striped beanie marine,3.50,500,Hats,/products/hats/B3.jpg
+H4,Hats 4 B,Swiss flag striped beanie red,3.50,500,Hats,/products/hats/B4.jpg
+H5,Hats 5 B,Switzerland black wooly hat,6.00,500,Hats,/products/hats/B5.jpg
+H6,Hats 6 B,Switzerland red wooly hat,6.00,500,Hats,/products/hats/B6.jpg
+H7,Hats 7 B,Red woolly hat,5.00,500,Hats,/products/hats/B7.jpg
+H8,Hats 8 B,Switzerland grey beanie,3.50,500,Hats,/products/hats/B8.jpg
+H9,Hats 9 B,Swiss Mountain,4.00,500,Hats,/products/hats/B9.jpg
+H10,Hats 10 B,Switzerland,4.00,500,Hats,/products/hats/B10.jpg
+H11,Htas 11 B,Pink - Swiss flag with poom pom,5.00,500,Hats,/products/hats/B11.jpg
+H12,Hats 12 B,White - Swiss flag with pom pom,5.00,500,Hats,/products/hats/B12.jpg
+H13,Hats 13 B,Switzerland blue,5.00,500,Hats,/products/hats/B13.jpg
+H14,Hats 14 B,Switzerland green,5.00,500,Hats,/products/hats/B14.jpg
+H15,Hats 15 B,Switzerland light blue,5.00,500,Hats,/products/hats/B15.jpg
+H16,Hats 16 B,Switzerland bear,5.00,500,Hats,/products/hats/B16.jpg
+H17,Hats 17 B,Switzerland,5.00,500,Hats,/products/hats/B17.jpg
+H18,Hats 18 B,Black - Swiss Mountain,5.00,500,Hats,/products/hats/B18.jpg
+H19,Hats 18 B,Red - Swiss Mountain,5.00,500,Hats,/products/hats/B18.jpg
+H20,Hats 18 B,Pink - Swiss Mountain,5.00,500,Hats,/products/hats/B18.jpg
+H21,Hats 18 B,Blue - Swiss Mountain,5.00,500,Hats,/products/hats/B18.jpg
+H22,Hats 19 B,Red - Swiss Mountain,5.00,500,Hats,/products/hats/B19.jpg
+H23,Hats 20 B,Navy blue - Swiss Mountain,5.00,500,Hats,/products/hats/B20.jpg
+H24,Hats 21 B,Pink - Swiss Mountain,5.00,500,Hats,/products/hats/B21.jpg
+H25,Hats 22 B,Switzerland,5.00,500,Hats,/products/hats/B22.jpg

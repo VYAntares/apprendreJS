@@ -28,6 +28,7 @@ export async function handle({ event, resolve }) {
         path: '/',
         httpOnly: true,
         sameSite: 'lax',
+        secure: false,
         maxAge: 60 * 60 * 24 // 24 heures
       });
     }

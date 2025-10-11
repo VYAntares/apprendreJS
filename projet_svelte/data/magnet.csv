@@ -1,2 +1,396 @@
 id,name,description,price,stock,category,image_path
-M1,Magnet 193,Animals hand spinner,2.60,1000,Magnet,static/products/magnet/M1.png
+M1,Magnet 1,Genève water jet relief (horloge),1.70,500,Magnet,/products/magnet/M1.jpg
+M2,Magnet 2,Genève water jet relief,1.70,500,Magnet,/products/magnet/M2.jpg
+M3,Magnet 3,Genève boat relief,1.70,500,Magnet,/products/magnet/M3.jpg
+M4,Magnet 4,Lake boat relief,1.70,500,Magnet,/products/magnet/M4.jpg
+M5,Magnet 5,Saas Fee city snow relief,1.70,500,Magnet,/products/magnet/M5.jpg
+M6,Magnet 6,Lausanne City relief,1.70,500,Magnet,/products/magnet/M6.jpg
+M7,Magnet 8,Swiss Bottle opener,2.00,500,Magnet,/products/magnet/M8.jpg
+M8,Magnet 9,Matterhorn Valais,1.70,500,Magnet,/products/magnet/M9.jpg
+M9,Magnet 10,Matterhorn,1.70,500,Magnet,/products/magnet/M10.jpg
+M10,Magnet 11,Matterhorn Switzerland,1.70,500,Magnet,/products/magnet/M11.jpg
+M11,Magnet 12,Zermatt Matterhorn,1.70,500,Magnet,/products/magnet/M12.jpg
+M12,Magnet 13,Cartoon cow,2.00,500,Magnet,/products/magnet/M13.jpg
+M13,Magnet 14,Big bell,3.00,500,Magnet,/products/magnet/M14.jpg
+M14,Magnet 15,Luzern Kapellbrücke,1.70,500,Magnet,/products/magnet/M15.jpg
+M15,Magnet 16,Luzern Kapellbrücke,1.70,500,Magnet,/products/magnet/M16.jpg
+M16,Magnet 17,Fidget Spinner cows,2.60,500,Magnet,/products/magnet/M17.jpg
+M17,Magnet 18,Lausanne-Ouchy harbour,1.70,500,Magnet,/products/magnet/M18.jpg
+M18,Magnet 19,Montreux Castle boat,1.70,500,Magnet,/products/magnet/M19.jpg
+M19,Magnet 20,Montreux Chillon castle,1.70,500,Magnet,/products/magnet/M20.jpg
+M20,Magnet 22,Montreux Chillon castle boat,1.70,500,Magnet,/products/magnet/M22.jpg
+M21,Magnet 25,Gruyères Switzerland round,1.70,500,Magnet,/products/magnet/M25.jpg
+M22,Magnet 26,Gruyères Street,1.70,500,Magnet,/products/magnet/M26.jpg
+M23,Magnet 27,Grimentz town Valais,1.70,500,Magnet,/products/magnet/M27.jpg
+M24,Magnet 28,Grimentz town flowers,1.70,500,Magnet,/products/magnet/M28.jpg
+M25,Magnet 29,Rheinfall boat,1.70,500,Magnet,/products/magnet/M29.jpg
+M26,Magnet 30,Crans-Montana landscape,1.70,500,Magnet,/products/magnet/M30.jpg
+M27,Magnet 32,Crans-Montana under snow,1.70,500,Magnet,/products/magnet/M32.jpg
+M28,Magnet 34,Davos skiing,1.70,500,Magnet,/products/magnet/M34.jpg
+M29,Magnet 35,St-Moritz cable car cabin,1.70,500,Magnet,/products/magnet/M35.jpg
+M30,Magnet 36,St-Moritz skiing,1.70,500,Magnet,/products/magnet/M36.jpg
+M31,Magnet 37,Morgins relief,1.70,500,Magnet,/products/magnet/M37.jpg
+M32,Magnet 38,Cabin and cable car relief,1.70,500,Magnet,/products/magnet/M38.jpg
+M33,Magnet 39,Cabin and cable car relief,1.70,500,Magnet,/products/magnet/M39.jpg
+M34,Magnet 40,Dookie long legs black,1.70,500,Magnet,/products/magnet/M40.jpg
+M35,Magnet 42,St-Bernard and puppies,1.70,500,Magnet,/products/magnet/M42.jpg
+M36,Magnet 48,Marmot on green grass,1.70,500,Magnet,/products/magnet/M48.jpg
+M37,Magnet 49,cuckoo clock,4.00,500,Magnet,/products/magnet/M49.jpg
+M38,Magnet ASCONA,cuckoo,1.70,500,Magnet,/products/magnet/M49.jpg
+M39,Magnet 53,Swiss Chocolate Red,1.70,500,Magnet,/products/magnet/M53.jpg
+M40,Magnet 54,Swiss Chocolate Purple,1.70,500,Magnet,/products/magnet/M54.jpg
+M41,Magnet 55,Switzerland Raclette,1.70,500,Magnet,/products/magnet/M55.jpg
+M42,Magnet 56,Swiss Fondue Caquelon,1.70,500,Magnet,/products/magnet/M56.jpg
+M43,Magnet 57,Dookie eating fondue,1.70,500,Magnet,/products/magnet/M57.jpg
+M44,Magnet 58,Switzerland Lugano,1.70,500,Magnet,/products/magnet/M58.jpg
+M45,Magnet 59,Dookie head with flower,1.70,500,Magnet,/products/magnet/M59.jpg
+M46,Magnet 60,bottle-opener dookie flower,2.00,500,Magnet,/products/magnet/M60.jpg
+M47,Magnet 61,bottle-opener pint,2.00,500,Magnet,/products/magnet/M61.jpg
+M48,Magnet 62,Gold lingot,1.70,500,Magnet,/products/magnet/M62.jpg
+M49,Magnet 63,Toblerone,1.70,500,Magnet,/products/magnet/M63.jpg
+M50,Magnet 64,Poya Switzerland,1.70,500,Magnet,/products/magnet/M64.jpg
+M51,Magnet 66,Moon Boot Switzerland,1.70,500,Magnet,/products/magnet/M66.jpg
+M52,Magnet 67,Red Cow,1.70,500,Magnet,/products/magnet/M67.jpg
+M53,Magnet 68,Rippling swiss flag,1.70,500,Magnet,/products/magnet/M68.jpg
+M54,Magnet 69,Bell Switzerland,1.70,500,Magnet,/products/magnet/M69.jpg
+M55,Magnet 71,cuckoo thermometer,1.70,500,Magnet,/products/magnet/M71.jpg
+M56,Magnet 72,cuckoo thermometer,1.70,500,Magnet,/products/magnet/M72.jpg
+M57,Magnet 73,cuckoo,1.70,500,Magnet,/products/magnet/M73.jpg
+M58,Magnet 74,cuckoo thermometer,1.70,500,Magnet,/products/magnet/M74.jpg
+M59,Magnet 75,cuckoo,1.70,500,Magnet,/products/magnet/M75.jpg
+M60,Magnet 76,cuckoo,1.70,500,Magnet,/products/magnet/M76.jpg
+M61,Magnet 77,cuckoo,1.70,500,Magnet,/products/magnet/M77.jpg
+M62,Magnet 78,Jungfraujoch cuckoo,1.70,500,Magnet,/products/magnet/M78.jpg
+M63,Magnet 79,cuckoo,1.70,500,Magnet,/products/magnet/M79.jpg
+M64,Magnet 80,cuckoo thermometer,1.70,500,Magnet,/products/magnet/M80.jpg
+M65,Magnet 81,Genève cuckoo,1.70,500,Magnet,/products/magnet/M81.jpg
+M66,Magnet 82,Gruyères cuckoo,1.70,500,Magnet,/products/magnet/M82.jpg
+M67,Magnet 83,Jungfraujoch,1.70,500,Magnet,/products/magnet/M83.jpg
+M68,Magnet 84,Jungfraujoch,1.70,500,Magnet,/products/magnet/M84.jpg
+M69,Magnet 85,Lausanne,1.70,500,Magnet,/products/magnet/M85.jpg
+M70,Magnet 86,Lausanne harbour,1.70,500,Magnet,/products/magnet/M86.jpg
+M71,Magnet 87,Luzern Kapellbrücke,1.70,500,Magnet,/products/magnet/M87.jpg
+M72,Magnet 88,Rheinfall,1.70,500,Magnet,/products/magnet/M88.jpg
+M73,Magnet 89,Schilthorn,1.70,500,Magnet,/products/magnet/M89.jpg
+M74,Magnet 90,cuckoo,1.70,500,Magnet,/products/magnet/M90.jpg
+M75,Magnet 91,Zürich Switzerland Limmat,1.70,500,Magnet,/products/magnet/M91.jpg
+M76,Magnet 92,Piz Gloria Schilthorn,1.70,500,Magnet,/products/magnet/M92.jpg
+M77,Magnet 93,cuckoo thermometer,1.70,500,Magnet,/products/magnet/M93.jpg
+M78,Magnet 94,cuckoo / Swiss Vapeur Parc MM,1.70,500,Magnet,/products/magnet/M94.jpg
+M79,Magnet 95,cuckoo,1.70,500,Magnet,/products/magnet/M95.jpg
+M80,Magnet 96,Chillon castle cuckoo,1.70,500,Magnet,/products/magnet/M96.jpg
+M81,Magnet 97,Bern Switzerland cuckoo bear,1.70,500,Magnet,/products/magnet/M97.jpg
+M82,Magnet 98,Bern Switzerland Zytglogge,1.70,500,Magnet,/products/magnet/M98.jpg
+M83,Magnet 99,Morcote City,1.70,500,Magnet,/products/magnet/M99.jpg
+M84,Magnet 100,Simplon Pass eagle statue,1.70,500,Magnet,/products/magnet/M100.jpg
+M85,Magnet 101,Cathedral Lausanne,1.70,500,Magnet,/products/magnet/M101.jpg
+M86,Magnet 102,St-Bernard and puppies,1.70,500,Magnet,/products/magnet/M102.jpg
+M87,Magnet 103,Les Pacots ski club,1.70,500,Magnet,/products/magnet/M103.jpg
+M88,Magnet 104,Jungfraujoch relief,1.70,500,Magnet,/products/magnet/M104.jpg
+M89,Magnet 105,Verbier snow Switzerland,1.70,500,Magnet,/products/magnet/M105.jpg
+M90,Magnet 106,City view,1.70,500,Magnet,/products/magnet/M106.jpg
+M91,Magnet 107,Bundeshaus,1.70,500,Magnet,/products/magnet/M107.jpg
+M92,Magnet 108,Zytglogge,1.70,500,Magnet,/products/magnet/M108.jpg
+M93,Magnet 109,Zytglogge,1.70,500,Magnet,/products/magnet/M109.jpg
+M94,Magnet 110,Zytglogge,1.70,500,Magnet,/products/magnet/M110.jpg
+M95,Magnet 111,Bear and cub tree,1.70,500,Magnet,/products/magnet/M111.jpg
+M96,Magnet 112,Bern bear MM,1.70,500,Magnet,/products/magnet/M112.jpg
+M97,Magnet 113,Zytglogge relief MM,1.70,500,Magnet,/products/magnet/M113.jpg
+M98,Magnet 114,Bern badge MM,1.70,500,Magnet,/products/magnet/M114.jpg
+M99,Magnet 115,St-Moritz,1.70,500,Magnet,/products/magnet/M115.jpg
+M100,Magnet 116,Bottle-opener,2.00,500,Magnet,/products/magnet/M116.jpg
+M101,Magnet 116f,Bear figurine FIG,3.00,500,Magnet,/products/magnet/M116f.jpg
+M102,Magnet 117,Water jet Genève,1.70,500,Magnet,/products/magnet/M117.jpg
+M103,Magnet 117f,Bear figurine FIG,3.00,500,Magnet,/products/magnet/M117f.jpg
+M104,Magnet 118,City Cathedral relief MM,1.70,500,Magnet,/products/magnet/M118.jpg
+M105,Magnet 119,Chillon castle MM,1.70,500,Magnet,/products/magnet/M119.jpg
+M106,Magnet 120,Swiss badge MM,1.70,500,Magnet,/products/magnet/M120.jpg
+M107,Magnet 121,Valais badge MM,1.70,500,Magnet,/products/magnet/M121.jpg
+M108,Magnet 122,Flag. cow. edelweis. bell MM,2.00,500,Magnet,/products/magnet/M122.jpg
+M109,Magnet 123,Matterhorn red letters,1.70,500,Magnet,/products/magnet/M123.jpg
+M110,Magnet 124,I love Luzern MM,1.70,500,Magnet,/products/magnet/M124.jpg
+M111,Magnet 125,I love Zermatt MM,1.70,500,Magnet,/products/magnet/M125.jpg
+M112,Magnet 126,I love Genève water jet MM,1.70,500,Magnet,/products/magnet/M126.jpg
+M113,Magnet 127,Cuckoo,1.70,500,Magnet,/products/magnet/M127.jpg
+M114,Magnet 128,bottle-opener I love Swiss MM,2.00,500,Magnet,/products/magnet/M128.jpg
+M115,Magnet 129,bottle-opener golden cow MM,2.00,500,Magnet,/products/magnet/M129.jpg
+M116,Magnet 131,bottle-opener swiss token MM,2.00,500,Magnet,/products/magnet/M131.jpg
+M117,Magnet 131c,Switzerland cuckoo clock,1.70,500,Magnet,/products/magnet/M131c.jpg
+M118,Magnet 132,Locarno panorama lake,1.70,500,Magnet,/products/magnet/M132.jpg
+M119,Magnet 134,Bottle-opener relief MM,2.00,500,Magnet,/products/magnet/M134.jpg
+M120,Magnet 135,Zermatt town Matterhorn,1.70,500,Magnet,/products/magnet/M135.jpg
+M121,Magnet 137,Zermatt city,1.70,500,Magnet,/products/magnet/M137.jpg
+M122,Magnet 138,Genève badge,1.70,500,Magnet,/products/magnet/M138.jpg
+M123,Magnet 139,panorama,1.70,500,Magnet,/products/magnet/M139.jpg
+M124,Magnet 140,Matterhorn 4470 m,1.70,500,Magnet,/products/magnet/M140.jpg
+M125,Magnet 141,Zermatt Matterhorn,1.70,500,Magnet,/products/magnet/M141.jpg
+M126,Magnet 142,St-Bernard with barrel,1.70,500,Magnet,/products/magnet/M142.jpg
+M127,Magnet 143,Gruyères street Moleson,1.70,500,Magnet,/products/magnet/M143.jpg
+M128,Magnet 144,Rheinfall Switzerland,1.70,500,Magnet,/products/magnet/M144.jpg
+M129,Magnet 145,Dookie Crans-Montana,1.70,500,Magnet,/products/magnet/M145.jpg
+M130,Magnet 146,Dookie skiing,1.70,500,Magnet,/products/magnet/M146.jpg
+M131,Magnet 147,Dookie St-Moritz sign,1.70,500,Magnet,/products/magnet/M147.jpg
+M132,Magnet 148,Davos Dookie sign,1.70,500,Magnet,/products/magnet/M148.jpg
+M133,Magnet 149,Dookie Gruyères sign,1.70,500,Magnet,/products/magnet/M149.jpg
+M134,Magnet 150,St-Bernard thermometer,2.00,500,Magnet,/products/magnet/M150.jpg
+M135,Magnet 152,Red bell white cross MM,1.70,500,Magnet,/products/magnet/M152.jpg
+M136,Magnet 153,Leman Lake grapes Lavaux,1.70,500,Magnet,/products/magnet/M153.jpg
+M137,Magnet 155,Interlaken bilboard Dookie,1.70,500,Magnet,/products/magnet/M155.jpg
+M138,Magnet 156,Grand St-Bernard cuckoo,1.70,500,Magnet,/products/magnet/M156.jpg
+M139,Magnet 157,Genève cuckoo,1.70,500,Magnet,/products/magnet/M157.jpg
+M140,Magnet 158,Zermatt cuckoo,1.70,500,Magnet,/products/magnet/M158.jpg
+M141,Magnet 161Ge,Dookie GE,1.70,500,Magnet,/products/magnet/M161Ge.jpg
+M142,Magnet 161Be,Dookie Be,1.70,500,Magnet,/products/magnet/M161Be.jpg
+M143,Magnet 161In,Dookie In,1.70,500,Magnet,/products/magnet/M161In.jpg
+M144,Magnet 161L,Dookie L,1.70,500,Magnet,/products/magnet/M161L.jpg
+M145,Magnet 161Lu,Dookie Lu,1.70,500,Magnet,/products/magnet/M161Lu.jpg
+M146,Magnet 161Mo,Dookie Mo,1.70,500,Magnet,/products/magnet/M161Mo.jpg
+M147,Magnet 161Rh,Dookie Rh,1.70,500,Magnet,/products/magnet/M161Rh.jpg
+M148,Magnet 161Ze,Dookie Ze,1.70,500,Magnet,/products/magnet/M161Ze.jpg
+M149,Magnet 161Zh,Dookie Zh,1.70,500,Magnet,/products/magnet/M161Zh.jpg
+M150,Magnet 162,Bear Zytglogge,1.70,500,Magnet,/products/magnet/M162.jpg
+M151,Magnet 163,Matterhorn train,1.70,500,Magnet,/products/magnet/M163.jpg
+M152,Magnet 164,Grand St-Bernard,1.70,500,Magnet,/products/magnet/M164.jpg
+M153,Magnet 165,Zürich cuckoo,1.70,500,Magnet,/products/magnet/M165.jpg
+M154,Magnet 166,St-Bernard,1.70,500,Magnet,/products/magnet/M166.jpg
+M155,Magnet 167,Lanterbrunnen,1.70,500,Magnet,/products/magnet/M167.jpg
+M156,Magnet 168,Metallic Postal bus,1.00,500,Magnet,/products/magnet/M168.jpg
+M157,Magnet 169,Metallic Zermatt,1.00,500,Magnet,/products/magnet/M169.jpg
+M158,Magnet 170,Metallic train,1.00,500,Magnet,/products/magnet/M170.jpg
+M159,Magnet 171,Andermatt train,1.70,500,Magnet,/products/magnet/M171.jpg
+M160,Magnet 172,Grossmunster Zürich MM,1.70,500,Magnet,/products/magnet/M172.jpg
+M161,Magnet 173,Metallic Zürich,1.00,500,Magnet,/products/magnet/M173.jpg
+M162,Magnet 174,Metallic Interlaken,1.00,500,Magnet,/products/magnet/M174.jpg
+M163,Magnet 175,Matterhorn cabin landscape MM,2.00,500,Magnet,/products/magnet/M175.jpg
+M164,Magnet 176,Andermatt ski,1.70,500,Magnet,/products/magnet/M176.jpg
+M165,Magnet 178,Lucerne Kapellbrücke MM,1.70,500,Magnet,/products/magnet/M178.jpg
+M166,Magnet 179,Nyon castle,1.70,500,Magnet,/products/magnet/M179.jpg
+M167,Magnet 181,fondue pot,1.70,500,Magnet,/products/magnet/M181.jpg
+M168,Magnet 182,Red cow head,1.70,500,Magnet,/products/magnet/M182.jpg
+M169,Magnet 183,Red cow,1.70,500,Magnet,/products/magnet/M183.jpg
+M170,Magnet 184,BW cow switzerland,1.70,500,Magnet,/products/magnet/M184.jpg
+M171,Magnet 186,Cuckoo,1.70,500,Magnet,/products/magnet/M186.jpg
+M172,Magnet 186f,Raclette and wine MM,1.70,500,Magnet,/products/magnet/M186f.jpg
+M173,Magnet 187,Cuckoo,1.70,500,Magnet,/products/magnet/M187.jpg
+M174,Magnet 188,Cuckoo,1.70,500,Magnet,/products/magnet/M188.jpg
+M175,Magnet 189,Cuckoo,1.70,500,Magnet,/products/magnet/M189.jpg
+M176,Magnet 190,Magnet box,2.40,500,Magnet,/products/magnet/M190.jpg
+M177,Magnet 191,Magnet box,2.40,500,Magnet,/products/magnet/M191.jpg
+M178,Magnet 192,BASEL charm magnet,2.00,500,Magnet,/products/magnet/M192.jpg
+M179,Magnet 193,Animals hand spinner,2.60,500,Magnet,/products/magnet/M193.jpg
+M180,Magnet 194,Yellow plates hand spinner,2.60,500,Magnet,/products/magnet/M194.jpg
+M181,Magnet 196,Camera magnet GENEVA,1.70,500,Magnet,/products/magnet/M196.jpg
+M182,Magnet 197,Camera magnet Bern bear,1.70,500,Magnet,/products/magnet/M197.jpg
+M183,Magnet 198,Camera magnet Bern,1.70,500,Magnet,/products/magnet/M198.jpg
+M184,Magnet 199,Camera magnet Switzerland,1.70,500,Magnet,/products/magnet/M199.jpg
+M185,Magnet 200,Bicycles magnet GENEVA,1.70,500,Magnet,/products/magnet/M200.jpg
+M186,Magnet 201,Bicycles magnet Bern,1.70,500,Magnet,/products/magnet/M201.jpg
+M187,Magnet 202,Bicycles magnet Zürich,1.70,500,Magnet,/products/magnet/M202.jpg
+M188,Magnet 203,Bear magnet with bottle opener UV printing Green.White. Pink.Blue,2.00,500,Magnet,/products/magnet/M203.jpg
+M189,Magnet 204,Magnet Geneva broken chair,2.00,500,Magnet,/products/magnet/M204.jpg
+M190,Magnet 252,Genève water jet,1.70,500,Magnet,/products/magnet/M252.jpg
+M191,Magnet 257,Swiss mountains (magnet seins),1.70,500,Magnet,/products/magnet/M257.jpg
+M192,Magnet 258,Luzern Kapellbrücke,1.70,500,Magnet,/products/magnet/M258.jpg
+M193,Magnet 261,Metallic Montreux,1.00,500,Magnet,/products/magnet/M161.jpg
+M194,Magnet 262,Set Swiss DE,2.40,500,Magnet,/products/magnet/M262.jpg
+M195,Magnet 263,Set Swiss FR,2.40,500,Magnet,/products/magnet/M263.jpg
+M196,Magnet 264,Planchette aperitif,1.70,500,Magnet,/products/magnet/M264.jpg
+M197,Magnet 265,Metallic Genève,1.00,500,Magnet,/products/magnet/M265.jpg
+M198,Magnet 266,Metallic Bern,1.00,500,Magnet,/products/magnet/M266.jpg
+M199,Magnet 267,Fondue pot | 30x15 Metallic plate MM,1.70,500,Magnet,/products/magnet/M267.jpg
+M200,Magnet 268,Metallic Crans-Montana,1.00,500,Magnet,/products/magnet/M268.jpg
+M201,Magnet 269,Metallic Lausanne | 30x15 Metallic plate MM,1.00,500,Magnet,/products/magnet/M269.jpg
+M202,Magnet 270,Metallic 1291 | 30x15 Metallic plate MM,1.00,500,Magnet,/products/magnet/M270.jpg
+M203,Magnet 271,Kapellbrücke Pilatus,1.70,500,Magnet,/products/magnet/M271.jpg
+M204,Magnet 272,Swiss map rubber Red,1.00,500,Magnet,/products/magnet/M272.jpg
+M205,Magnet 273,Swiss map rubber White,1.00,500,Magnet,/products/magnet/M273.jpg
+M206,Magnet 274,Metallic red poya,1.20,500,Magnet,/products/magnet/M274.jpg
+M207,Magnet 275,Metallic Pedestrian VS 10x3cm,1.20,500,Magnet,/products/magnet/M275.jpg
+M208,Magnet 276,Metallic Pedestrian Lausanne 10x3cm,1.20,500,Magnet,/products/magnet/M276.jpg
+M209,Magnet 277,Metallic Pedestrian Luzern 10x3cm,1.20,500,Magnet,/products/magnet/M277.jpg
+M210,Magnet 278,Metallic Pedestrian Zermatt 10x3cm,1.20,500,Magnet,/products/magnet/M278.jpg
+M211,Magnet 279,Metallic Pedestrian Interlaken 10x3cm,1.20,500,Magnet,/products/magnet/M279.jpg
+M212,Magnet 280,Metallic Pedestrian Bern 10x3cm,1.20,500,Magnet,/products/magnet/M280.jpg
+M213,Magnet 281,Metallic Pedestrian GE 10x3cm,1.20,500,Magnet,/products/magnet/M281.jpg
+M214,Magnet 282,Metallic Pedestrian ZU 10x3cm,1.20,500,Magnet,/products/magnet/M282.jpg
+M215,Magnet 284,Metallic Pedestrian Rheinfall 10x3cm,1.20,500,Magnet,/products/magnet/M284.jpg
+M216,Magnet 285,Swiss map Interlaken,1.00,500,Magnet,/products/magnet/M285.jpg
+M217,Magnet 286,Swiss map Lausanne,1.00,500,Magnet,/products/magnet/M286.jpg
+M218,Magnet 287,Swiss map Luzern,1.00,500,Magnet,/products/magnet/M287.jpg
+M219,Magnet 288,Swiss map Rheinfall,1.00,500,Magnet,/products/magnet/M288.jpg
+M220,Magnet 289,Swiss map Zermatt (night),1.00,500,Magnet,/products/magnet/M289.jpg
+M221,Magnet 290,Swiss map Zermatt,1.00,500,Magnet,/products/magnet/M290.jpg
+M222,Magnet 291,Bear Bern Switzerland,1.70,500,Magnet,/products/magnet/M291.jpg
+M223,Magnet 292,Swiss map Zürich,1.00,500,Magnet,/products/magnet/M292.jpg
+M224,Magnet 292z,Bicycles magnet Zürich,1.70,500,Magnet,/products/magnet/M292z.jpg
+M225,Magnet 293,Zytglogge,1.70,500,Magnet,/products/magnet/M293.jpg
+M226,Magnet 294,Swiss map Genève,1.00,500,Magnet,/products/magnet/M294.jpg
+M227,Magnet 295,Swiss map Bern,1.00,500,Magnet,/products/magnet/M295.jpg
+M228,Magnet 296c,Cuckoo clock,1.70,500,Magnet,/products/magnet/M296c.jpg
+M229,Magnet 296,Swiss map Montreux,1.00,500,Magnet,/products/magnet/M296.jpg
+M230,Magnet 297,Swiss map Crans-Montana,1.00,500,Magnet,/products/magnet/M297.jpg
+M231,Magnet 298,Metallic Pedestrian Gruyères 10x3cm,1.20,500,Magnet,/products/magnet/M298.jpg
+M232,Magnet 299,Swiss map panorama,1.00,500,Magnet,/products/magnet/M299.jpg
+M233,Magnet 300,Switzerland red MM,1.70,500,Magnet,/products/magnet/M300.jpg
+M234,Magnet 301,bottle-opener Dookie MM,2.00,500,Magnet,/products/magnet/M301.jpg
+M235,Magnet 302,Metallic cycle track,1.20,500,Magnet,/products/magnet/M302.jpg
+M236,Magnet 303,Red cow over Switzerland text MM,1.70,500,Magnet,/products/magnet/M303.jpg
+M237,Magnet 304,Fondue cheese. cow. bell MM,2.00,500,Magnet,/products/magnet/M304.jpg
+M238,Magnet 305,Cow bell Switzerland MM,2.00,500,Magnet,/products/magnet/M305.jpg
+M239,Magnet 306,Jungfraujoch MM,2.00,500,Magnet,/products/magnet/M306.jpg
+M240,Magnet 307g,Golden bell swiss flag,1.70,500,Magnet,/products/magnet/M307g.jpg
+M241,Magnet 307,Water jet magnet MM,2.00,500,Magnet,/products/magnet/M307.jpg
+M242,Magnet 308,flag. clock. water jet. chocolate MM,2.00,500,Magnet,/products/magnet/M308.jpg
+M243,Magnet 315,Bear MM,2.00,500,Magnet,/products/magnet/M315.jpg
+M244,Magnet 316,Zytglogge MM,2.00,500,Magnet,/products/magnet/M316.jpg
+M245,Magnet 317,Zytglogge MM,2.00,500,Magnet,/products/magnet/M317.jpg
+M246,Magnet 318,Zytglogge MM,1.70,500,Magnet,/products/magnet/M318.jpg
+M247,Magnet 319,Heart shaped Zytglogge,1.70,500,Magnet,/products/magnet/M319.jpg
+M248,Magnet 320,Bear head trophy 1,1.70,500,Magnet,/products/magnet/M320.jpg
+M249,Magnet 321,Interlaken,2.00,500,Magnet,/products/magnet/M321.jpg
+M250,Magnet 322,Montreux,2.00,500,Magnet,/products/magnet/M322.jpg
+M251,Magnet 323,Lausanne-Ouchy harbour,1.70,500,Magnet,/products/magnet/M323.jpg
+M252,Magnet 324,Cathedral Lausanne MM,2.00,500,Magnet,/products/magnet/M324.jpg
+M253,Magnet 326,Lausanne Ouchy harbour MM,1.30,500,Magnet,/products/magnet/M326.jpg
+M254,Magnet 336,Magnet Gruyères MM,2.00,500,Magnet,/products/magnet/M336.jpg
+M255,Magnet 336E,Magnet Einstein Crystal,1.00,500,Magnet,/products/magnet/M336E.jpg
+M256,Magnet 337,Hearth shaped Gruyères,1.70,500,Magnet,/products/magnet/M337.jpg
+M257,Magnet 338,Gruyères city double sided MM,1.30,500,Magnet,/products/magnet/M338.jpg
+M258,Magnet 339,Crans-Montana double sided MM,1.30,500,Magnet,/products/magnet/M339.jpg
+M259,Magnet 340,Heart Bern,1.00,500,Magnet,/products/magnet/M340.jpg
+M260,Magnet 341,Heart Zermatt,1.00,500,Magnet,/products/magnet/M341.jpg
+M261,Magnet 342,Heart Zürich,1.00,500,Magnet,/products/magnet/M342.jpg
+M262,Magnet 343,Heart Crans-Montana,1.00,500,Magnet,/products/magnet/M343.jpg
+M263,Magnet 344,Heart Genève,1.00,500,Magnet,/products/magnet/M344.jpg
+M264,Magnet 345,Heart Interlaken,1.00,500,Magnet,/products/magnet/M345.jpg
+M265,Magnet 346,Heart Lausanne,1.00,500,Magnet,/products/magnet/M346.jpg
+M266,Magnet 347,Heart Luzern,1.00,500,Magnet,/products/magnet/M347.jpg
+M267,Magnet 348,Heart Montreux,1.00,500,Magnet,/products/magnet/M348.jpg
+M268,Magnet 349,Heart Rheinfall,1.00,500,Magnet,/products/magnet/M349.jpg
+M269,Magnet 350,Heart Switzerland,1.00,500,Magnet,/products/magnet/M350.jpg
+M270,Magnet 352,Bear figurine FIG,3.00,500,Magnet,/products/magnet/M352.jpg
+M271,Magnet 353,Heart Freddie,1.00,500,Magnet,/products/magnet/M353.jpg
+M272,Magnet 355,Bottle-opener MM,2.00,500,Magnet,/products/magnet/M355.jpg
+M273,Magnet 356,grey cow head with flower,1.70,500,Magnet,/products/magnet/M356.jpg
+M274,Magnet 358,Cuckoo clock,5.00,500,Magnet,/products/magnet/M358.jpg
+M275,Magnet 359,Double-sided GE,1.30,500,Magnet,/products/magnet/M359.jpg
+M276,Magnet 360,Water jet Switzerland MM,1.70,500,Magnet,/products/magnet/M360.jpg
+M277,Magnet 362,Cow bell Genève MM,1.70,500,Magnet,/products/magnet/M362.jpg
+M278,Magnet 363,double-sided panorama MM,1.30,500,Magnet,/products/magnet/M363.jpg
+M279,Magnet 364,Limmat MM,2.00,500,Magnet,/products/magnet/M364.jpg
+M280,Magnet 365,Hearth shaped Limmat MM,1.70,500,Magnet,/products/magnet/M365.jpg
+M281,Magnet 366,double-sided Zytglogge MM,1.30,500,Magnet,/products/magnet/M366.jpg
+M282,Magnet 367,Bear. Zytglogge figurine FIG,3.50,500,Magnet,/products/magnet/M367.jpg
+M283,Magnet 368,Bear head trophy 2,1.70,500,Magnet,/products/magnet/M386.jpg
+M284,Magnet 369,Lausanne City MM,1.30,500,Magnet,/products/magnet/M369.jpg
+M285,Magnet 370,Rheinfall MM,2.00,500,Magnet,/products/magnet/M370.jpg
+M286,Magnet 371,Grd St-Bernard MM,2.00,500,Magnet,/products/magnet/M371.jpg
+M287,Magnet 372,Zermatt hanger MM,2.00,500,Magnet,/products/magnet/M372.jpg
+M288,Magnet 373,Matterhorn train MM,1.30,500,Magnet,/products/magnet/M373.jpg
+M289,Magnet 374,Matterhorn Valais MM,1.70,500,Magnet,/products/magnet/M374.jpg
+M290,Magnet 376,Zermatt MM,2.00,500,Magnet,/products/magnet/M376.jpg
+M291,Magnet 377,Matterhorn Valais,1.70,500,Magnet,/products/magnet/M377.jpg
+M292,Magnet 378,Kapellbrücke MM,1.30,500,Magnet,/products/magnet/M378.jpg
+M293,Magnet 379,Montreux MM,2.00,500,Magnet,/products/magnet/M379.jpg
+M294,Magnet 380,Castle double sided MM,1.30,500,Magnet,/products/magnet/M380.jpg
+M295,Magnet 381,Montreux double sided MM,1.30,500,Magnet,/products/magnet/M381.jpg
+M296,Magnet 382,Rheinfall double sided MM,1.30,500,Magnet,/products/magnet/M382.jpg
+M297,Magnet 383,Hearth Rheinfall,1.70,500,Magnet,/products/magnet/M383.jpg
+M298,Magnet 384,Bear with cub,1.70,500,Magnet,/products/magnet/M384.jpg
+M299,Magnet 385,Fondue pot Bern,1.70,500,Magnet,/products/magnet/M385.jpg
+M300,Magnet 386,Fondue pot Crans-Montana,1.70,500,Magnet,/products/magnet/M386.jpg
+M301,Magnet 387,Fondue pot Genève,1.70,500,Magnet,/products/magnet/M387.jpg
+M302,Magnet 388,Fondue pot Interlaken,1.70,500,Magnet,/products/magnet/M388.jpg
+M303,Magnet 389,Fondue pot Lausanne,1.70,500,Magnet,/products/magnet/M389.jpg
+M304,Magnet 390,Fondue pot Luzern,1.70,500,Magnet,/products/magnet/M390.jpg
+M305,Magnet 391,Fondue pot Montreux,1.70,500,Magnet,/products/magnet/M391.jpg
+M306,Magnet 392,Fondue pot Rheinfall,1.70,500,Magnet,/products/magnet/M392.jpg
+M307,Magnet 393,Fondue pot Zermatt,1.70,500,Magnet,/products/magnet/M393.jpg
+M308,Magnet 394,Fondue pot Zürich,1.70,500,Magnet,/products/magnet/M394.jpg
+M309,Magnet 395,Bern,1.00,500,Magnet,/products/magnet/M395.jpg
+M310,Magnet 396,Crans-Montana,1.00,500,Magnet,/products/magnet/M396.jpg
+M311,Magnet 397,Genève,1.00,500,Magnet,/products/magnet/M397.jpg
+M312,Magnet 398,Interlaken,1.00,500,Magnet,/products/magnet/M398.jpg
+M313,Magnet 399,Lausanne,1.00,500,Magnet,/products/magnet/M399.jpg
+M314,Magnet 400,Luzern,1.00,500,Magnet,/products/magnet/M400.jpg
+M315,Magnet 401,Montreux,1.00,500,Magnet,/products/magnet/M401.jpg
+M316,Magnet 402,Rheinfall,1.00,500,Magnet,/products/magnet/M402.jpg
+M317,Magnet 403,Zermatt,1.00,500,Magnet,/products/magnet/M403.jpg
+M318,Magnet 404,Zürich,1.00,500,Magnet,/products/magnet/M404.jpg
+M319,Magnet 405,Switzerland,1.00,500,Magnet,/products/magnet/M405.jpg
+M320,Magnet 406,Swiss Round,2.00,500,Magnet,/products/magnet/M406.jpg
+M321,Magnet 408,Hanger Crans-Montana,2.00,500,Magnet,/products/magnet/M408.jpg
+M322,Magnet 409,Cartoon cow,2.00,500,Magnet,/products/magnet/M409.jpg
+M323,Magnet 410,bell magnet Gd-St-Bernard,3.00,500,Magnet,/products/magnet/M410.jpg
+M324,Magnet 411,bell magnet Zürich,3.00,500,Magnet,/products/magnet/M411.jpg
+M325,Magnet 412,bell magnet Luzern,3.00,500,Magnet,/products/magnet/M412.jpg
+M326,Magnet 413,bell magnet Lausanne,3.00,500,Magnet,/products/magnet/M413.jpg
+M327,Magnet 414,bell magnet Bern,3.00,500,Magnet,/products/magnet/M414.jpg
+M328,Magnet 415,bell magnet Interlaken,3.00,500,Magnet,/products/magnet/M415.jpg
+M329,Magnet 416,bell magnet Switzerland,3.00,500,Magnet,/products/magnet/M416.jpg
+M330,Magnet 417,bell magnet Rheinfall,3.00,500,Magnet,/products/magnet/M417.jpg
+M331,Magnet 420,Bottle-opener BE,2.00,500,Magnet,/products/magnet/M420.jpg
+M332,Magnet 421,Bottle-opener Crans-Montana,2.00,500,Magnet,/products/magnet/M421.jpg
+M333,Magnet 422,Bottle-opener GE,2.00,500,Magnet,/products/magnet/M422.jpg
+M334,Magnet 423,Bottle-opener IN,2.00,500,Magnet,/products/magnet/M423.jpg
+M335,Magnet 424,Bottle-opener LU,2.00,500,Magnet,/products/magnet/M424.jpg
+M336,Magnet 425,Bottle-opener Nyon,2.00,500,Magnet,/products/magnet/M425.jpg
+M337,Magnet 426,Bottle-opener Rheinfall,2.00,500,Magnet,/products/magnet/M426.jpg
+M338,Magnet 427,Bottle-opener Switzerland,2.00,500,Magnet,/products/magnet/M427.jpg
+M339,Magnet 428,Bottle-opener Zermatt,2.00,500,Magnet,/products/magnet/M428.jpg
+M340,Magnet 429,Bottle-opener ZU,2.00,500,Magnet,/products/magnet/M429.jpg
+M341,Magnet 430,Edelweiss on bell,1.90,500,Magnet,/products/magnet/M430.jpg
+M342,Magnet 431,Decorative frame BE,2.00,500,Magnet,/products/magnet/M431.jpg
+M343,Magnet 432,Decorative frame Crans-Montana,2.00,500,Magnet,/products/magnet/M432.jpg
+M344,Magnet 433,Decorative frame GE,2.00,500,Magnet,/products/magnet/M433.jpg
+M345,Magnet 434,Decorative frame IN,2.00,500,Magnet,/products/magnet/M434.jpg
+M346,Magnet 435,Decorative frame LU,2.00,500,Magnet,/products/magnet/M435.jpg
+M347,Magnet 436,Decorative frame Nyon,2.00,500,Magnet,/products/magnet/M436.jpg
+M348,Magnet 437,Decorative frame RH,2.00,500,Magnet,/products/magnet/M437.jpg
+M349,Magnet 438,Decorative frame CH,2.00,500,Magnet,/products/magnet/M438.jpg
+M350,Magnet 439,Decorative frame Zermatt,2.00,500,Magnet,/products/magnet/M439.jpg
+M351,Magnet 440,Decorative frame ZU,2.00,500,Magnet,/products/magnet/M440.jpg
+M352,Magnet 441,Red edelweiss,1.90,500,Magnet,/products/magnet/M441.jpg
+M353,Magnet 442,Swiss chocolate packaging,1.70,500,Magnet,/products/magnet/M442.jpg
+M354,Magnet 443,Resin Bern Magnet,1.70,500,Magnet,/products/magnet/M443.jpg
+M355,Magnet 445,Metallic Switzerland 10x6cm,1.20,500,Magnet,/products/magnet/M445.jpg
+M356,Magnet 446,Metallic framed 10x6cm,1.20,500,Magnet,/products/magnet/M446.jpg
+M357,Magnet 447,Metallic swiss pikes 10x6cm,1.20,500,Magnet,/products/magnet/M447.jpg
+M358,Magnet 448,Metallic Valais 10x6cm,1.20,500,Magnet,/products/magnet/M448.jpg
+M359,Magnet 449,Metallic Genève 10x6cm,1.20,500,Magnet,/products/magnet/M449.jpg
+M360,Magnet 450,Metallic Vaud 10x6cm,1.20,500,Magnet,/products/magnet/M450.jpg
+M361,Magnet 451,Metallic Bern 10x6cm,1.20,500,Magnet,/products/magnet/M451.jpg
+M362,Magnet 452,Metallic Zürich 10x6cm,1.20,500,Magnet,/products/magnet/M452.jpg
+M363,Magnet 453,Metallic Pedestrian 10x3cm,1.20,500,Magnet,/products/magnet/M453.jpg
+M364,Magnet 454a,Bern Bear,1.00,500,Magnet,/products/magnet/M454a.jpg
+M365,Magnet 454,Bottle-opener dookie,2.00,500,Magnet,/products/magnet/M454.jpg
+M366,Magnet 454b,Spinner Cheese Fondue,2.60,500,Magnet,/products/magnet/M454b.jpg
+M367,Magnet 455,Cheese Fondue,2.00,500,Magnet,/products/magnet/MB454.jpg
+M368,Magnet 456f,Einstein head E=mc2,1.70,500,Magnet,/products/magnet/M456f.jpg
+M369,Magnet 456,Einstein colors,1.70,500,Magnet,/products/magnet/M456.jpg
+M370,Magnet 457,METALLIC MAGNET Vevey,1.00,500,Magnet,/products/magnet/M457.jpg
+M371,Magnet 458,Swiss animals MDF (in cork),1.00,500,Magnet,/products/magnet/M458.jpg
+M372,Magnet 459,Swiss cities MDF (in cork),1.00,500,Magnet,/products/magnet/M459.jpg
+M373,Magnet 461,Swiss ropeway,2.00,500,Magnet,/products/magnet/M461.jpg
+M374,Magnet 462MM,Fondue Pot Switzerland,2.00,500,Magnet,/products/magnet/M462MM.jpg
+M375,Magnet 462,Swiss boat,2.00,500,Magnet,/products/magnet/M462.jpg
+M376,Magnet 463,Swiss train,2.00,500,Magnet,/products/magnet/M463.jpg
+M377,Magnet 465,Cuckoo clock,5.00,500,Magnet,/products/magnet/M465.jpg
+M378,Magnet 466,Cuckoo clock,5.00,500,Magnet,/products/magnet/M466.jpg
+M379,Magnet 468,2 Bears head trophy,1.70,500,Magnet,/products/magnet/M468.jpg
+M380,Magnet 471,Switzerland Wood Signs,1.70,500,Magnet,/products/magnet/M471.jpg
+M381,Magnet 472,Heart Basel Switzerland,1.00,500,Magnet,/products/magnet/M472.jpg
+M382,Magnet 473,Basel Switzerland map,1.00,500,Magnet,/products/magnet/M473.jpg
+M383,Magnet 474,METALLIC MAGNET Vevey,1.00,500,Magnet,/products/magnet/M474.jpg
+M384,Magnet 477,Bear magnet resin,1.70,500,Magnet,/products/magnet/M477.jpg
+M385,Magnet VilleGe,cuckoo Ville Ge,1.70,500,Magnet,/products/magnet/Mville.jpg
+M386,Magnet VilleBe,cuckoo Ville Be,1.70,500,Magnet,/products/magnet/Mville.jpg
+M387,Magnet VilleMo,cuckoo Ville Mo,1.70,500,Magnet,/products/magnet/Mville.jpg
+M388,Magnet VilleLs,cuckoo Ville Ls,1.70,500,Magnet,/products/magnet/Mville.jpg
+M389,Magnet VilleZh,cuckoo Ville Zh,1.70,500,Magnet,/products/magnet/Mville.jpg
+M390,Magnet VilleLu,cuckoo Ville Lu,1.70,500,Magnet,/products/magnet/Mville.jpg
+M391,Magnet VilleLe,cuckoo Ville Leysin,1.70,500,Magnet,/products/magnet/Mville.jpg
+M392,Magnet VilleDa,cuckoo Ville Davos,1.70,500,Magnet,/products/magnet/Mville.jpg
+M393,Magnet VilleRh,cuckoo Ville Rheinfall,1.70,500,Magnet,/products/magnet/Mville.jpg
+M394,Magnet Cow resine,Cow resine,1.00,500,Magnet,/products/magnet/vache.jpg
+M395,Magnet New Geneve,square shiny,1.00,500,Magnet,/products/magnet/Mville44.jpg

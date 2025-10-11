@@ -1,4 +1,5 @@
 import Database from 'better-sqlite3';
+import { loadProductsFromCSV } from './loadProducts.js';
 
 const db = new Database('shop.db');
 
@@ -43,13 +44,15 @@ db.exec(`
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
   );
 
-  -- Table des produits
+  -- Table des produits (MODIFIÉE)
   CREATE TABLE IF NOT EXISTS products (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
     description TEXT,
     price REAL DEFAULT 0.00,
     stock INTEGER DEFAULT 0,
+    category TEXT,
+    image_path TEXT,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
   );
 
@@ -86,19 +89,15 @@ const userCount = db.prepare('SELECT COUNT(*) as count FROM users').get();
 if (userCount.count === 0) {
   console.log('Création de l\'utilisateur admin par défaut...');
   
-  // Transaction pour créer l'admin avec son profil
   const createAdmin = db.transaction(() => {
-    // Créer le user
     const result = db.prepare('INSERT INTO users (username, password, role) VALUES (?, ?, ?)')
       .run('admin', 'admin123', 'admin');
     
     const adminId = result.lastInsertRowid;
     
-    // Créer le profil
     db.prepare('INSERT INTO user_profiles (user_id, first_name, last_name, email) VALUES (?, ?, ?, ?)')
       .run(adminId, 'Admin', 'Système', 'admin@shop.com');
     
-    // Créer une adresse par défaut
     db.prepare(`
       INSERT INTO user_addresses (user_id, address_type, label, street, city, postal_code, country, is_default)
       VALUES (?, ?, ?, ?, ?, ?, ?, ?)
@@ -109,15 +108,16 @@ if (userCount.count === 0) {
   console.log('Admin créé : username=admin, password=admin123');
 }
 
-// Données de test pour les produits
+// Charger les produits depuis les fichiers CSV
 const productCount = db.prepare('SELECT COUNT(*) as count FROM products').get();
 if (productCount.count === 0) {
-  db.prepare('INSERT INTO products (name, description, price, stock) VALUES (?, ?, ?, ?)')
-    .run('Article 1', 'Description de l\'article 1', 19.99, 100);
-  db.prepare('INSERT INTO products (name, description, price, stock) VALUES (?, ?, ?, ?)')
-    .run('Article 2', 'Description de l\'article 2', 29.99, 50);
-  db.prepare('INSERT INTO products (name, description, price, stock) VALUES (?, ?, ?, ?)')
-    .run('Article 3', 'Description de l\'article 3', 39.99, 75);
+  console.log('\n🔄 Chargement des produits depuis les fichiers CSV...');
+  try {
+    loadProductsFromCSV(db);  // ← Passer db en paramètre
+  } catch (error) {
+    console.error('❌ Erreur lors du chargement des produits:', error.message);
+    console.log('⚠️  Assurez-vous que le dossier data/ existe avec des fichiers CSV');
+  }
 }
 
 export default db;

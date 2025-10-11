@@ -1,0 +1,21 @@
+id,name,description,price,stock,category,image_path
+CL1,Cloths 140,40x70cm cloth orange,3.30,500,Cloths,/products/cloths/Cloths140.jpg
+CL2,Cloths 141,40x70cm cloth green,3.30,500,Cloths,/products/cloths/Cloths141.jpg
+CL3,Cloths 142,40x70cm cloth sky,3.30,500,Cloths,/products/cloths/Cloths142.jpg
+CL4,Cloths 143,40x70cm cloth purple,3.30,500,Cloths,/products/cloths/Cloths143.jpg
+CL5,Cloths 144,40x70cm cloth brown,3.30,500,Cloths,/products/cloths/Cloths144.jpg
+CL6,Cloths 145,40x70cm cloth blue,3.30,500,Cloths,/products/cloths/Cloths145.jpg
+CL7,Cloths 146,40x70cm cloth poya,3.30,500,Cloths,/products/cloths/Cloths146.jpg
+CL8,Cloths 171,40x70cm cloth cream,3.30,500,Cloths,/products/cloths/Cloths171.jpg
+CL9,Cloths 172,40x70cm cloth red,3.30,500,Cloths,/products/cloths/Cloths172.jpg
+CL10,Cloths 183,40x70cm cloth white. blue. green GE,3.30,500,Cloths,/products/cloths/Cloths183.jpg
+CL11,Cloths 184,40x70cm cloth white. red LS,3.30,500,Cloths,/products/cloths/Cloths184.jpg
+CL12,Cloths 390,Round cloth flag,7.00,500,Cloths,/products/cloths/Cloths390.jpg
+CL13,Cloths 391,Round cloth dog,7.00,500,Cloths,/products/cloths/Cloths391.jpg
+CL14,Cloths 392,Round cloth cabins,7.00,500,Cloths,/products/cloths/Cloths392.jpg
+CL15,Cloths 393,Round cloth matterhorn,7.00,500,Cloths,/products/cloths/Cloths393.jpg
+CL16,Cloths 394,Round cloth flower,7.00,500,Cloths,/products/cloths/Cloths394.jpg
+CL17,Cloths 395,Round cloth train,7.00,500,Cloths,/products/cloths/Cloths395.jpg
+CL18,Cloths 396,Round cloth fondue,7.00,500,Cloths,/products/cloths/Cloths396.jpg
+CL19,Cloths 397,Round cloth horn,7.00,500,Cloths,/products/cloths/Cloths397.jpg
+CL20,Cloths 398,Round cloth soya,7.00,500,Cloths,/products/cloths/Cloths398.jpg

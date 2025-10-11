@@ -1,0 +1,66 @@
+id,name,description,price,stock,category,image_path
+C1,Caps 1 C,Casquette rouge avec croix Suisse,3.80,500,Caps,/products/caps/C1.jpg
+C2,Caps 2 C,Casquette grise. Switzerland,3.80,500,Caps,/products/caps/C2.jpg
+C3,Caps 3 C,Switzerland Original red/white,3.80,500,Caps,/products/caps/C3.jpg
+C4,Caps 4 C,Swiss Mountains burgundy,3.80,500,Caps,/products/caps/C4.jpg
+C5,Caps 5 C,Switzerland est 1291 beige,3.80,500,Caps,/products/caps/C5.jpg
+C6,Caps 6 C,Swiss flag round beige,3.80,500,Caps,/products/caps/C6.jpg
+C7,Caps 7 C,Swiss flag round red,3.80,500,Caps,/products/caps/C7.jpg
+C8,Caps 8 C,Swiss flag round black,3.80,500,Caps,/products/caps/C8.jpg
+C9,Caps 9 C,Swiss flag round marine,3.80,500,Caps,/products/caps/C9.jpg
+C10,Caps 10 C,Switzerland Military Swiss flag,4.50,500,Caps,/products/caps/C10.jpg
+C11,Caps 11 C,Confederatio Helvetica beige,3.80,500,Caps,/products/caps/C11.jpg
+C12,Caps 12 C,Confederatio Helvetica shield red,3.80,500,Caps,/products/caps/C12.jpg
+C13,Caps 13 C,Confederatio Helvetica black,3.80,500,Caps,/products/caps/C13.jpg
+C14,Caps 14 C,Confederatio Helvetica marine,3.80,500,Caps,/products/caps/C14.jpg
+C15,Caps 15 C,Valais coat of arm red,3.80,500,Caps,/products/caps/C15.jpg
+C16,Caps 16 C,Valais coat of arm black,3.80,500,Caps,/products/caps/C16.jpg
+C17,Caps 17 C,Matterhorn Switzerland beige,3.80,500,Caps,/products/caps/C17.jpg
+C18,Caps 18 C,Matterhorn Switzerland red,3.80,500,Caps,/products/caps/C18.jpg
+C19,Caps 19 C,Matterhorn Switzerland black,3.80,500,Caps,/products/caps/C19.jpg
+C20,Caps 20 C,Matterhorn Switzerland marine,3.80,500,Caps,/products/caps/C20.jpg
+C21,Caps 21 C,Switzerland brush script marine,3.80,500,Caps,/products/caps/C21.jpg
+C22,Caps 22 C,Switzerland brush script red,3.80,500,Caps,/products/caps/C22.jpg
+C23,Caps 23 C,Switzerland brush script black,3.80,500,Caps,/products/caps/C23.jpg
+C24,Caps 25 C,Switzerland brush script beige,3.80,500,Caps,/products/caps/C25.jpg
+C25,Caps 27 C,Bicolor Black and Red,3.80,500,Caps,/products/caps/C27.jpg
+C26,Caps 28 C,Bicolor Blue and Red,3.80,500,Caps,/products/caps/C28.jpg
+C27,Caps 39 C,Swiss Mountain since 1291 white,3.80,500,Caps,/products/caps/C39.jpg
+C28,Caps 40 C,Swiss Mountain since 1291 black,3.80,500,Caps,/products/caps/C40.jpg
+C29,Caps 41 C,Swiss Mountain since 1291 marine,3.80,500,Caps,/products/caps/C41.jpg
+C30,Caps 42 C,Swiss Mountain since 1291 red,3.80,500,Caps,/products/caps/C42.jpg
+C31,Caps 43 C,Swiss Mountain since 1291 beige,3.80,500,Caps,/products/caps/C43.jpg
+C32,Caps 44 C,Moutain Switzerland 1291 red,3.80,500,Caps,/products/caps/C44.jpg
+C33,Caps 45 C,Moutain Switzerland 1291 black,3.80,500,Caps,/products/caps/C45.jpg
+C34,Caps 46 C,Moutain Switzerland 1291 marine,3.80,500,Caps,/products/caps/C46.jpg
+C35,Caps 47 C,Switzerland star 1291 beige,3.80,500,Caps,/products/caps/C47.jpg
+C36,Caps 48 C,Switzerland star 1291 red,3.80,500,Caps,/products/caps/C48.jpg
+C37,Caps 49 C,Switzerland star 1291 black,3.80,500,Caps,/products/caps/C49.jpg
+C38,Caps 51 C,Kids - White cross on red,3.50,500,Caps,/products/caps/C51.jpg
+C39,Caps 52 C,Kids - Matterhorn Switzerland,3.50,500,Caps,/products/caps/C52.jpg
+C40,Caps 60 C,Swiss script light blue,3.80,500,Caps,/products/caps/C60.jpg
+C41,Caps 61 C,Swiss script pink,3.80,500,Caps,/products/caps/C61.jpg
+C42,Caps 62 C,Dense flowers,3.80,500,Caps,/products/caps/C62.jpg
+C43,Caps 63 C,Flowers,3.80,500,Caps,/products/caps/C63.jpg
+C44,Caps 64 C,Country of Alps jeans,3.80,500,Caps,/products/caps/C64.jpg
+C45,Caps 65 C,Country of Alps Chocolate,3.80,500,Caps,/products/caps/C65.jpg
+C46,Caps 66 C,Country of Alps Grey,3.80,500,Caps,/products/caps/C66.jpg
+C47,Caps 70 C,Script flag Genève,3.80,500,Caps,/products/caps/C70.jpg
+C48,Caps 71 C,Script flag Gruyères,3.80,500,Caps,/products/caps/C71.jpg
+C49,Caps 72 C,Script flag Lausanne,3.80,500,Caps,/products/caps/C72.jpg
+C50,Caps 73 C,Script flag Montreux,3.80,500,Caps,/products/caps/C73.jpg
+C51,Caps 74 C,Script flag Zermatt,3.80,500,Caps,/products/caps/C74.jpg
+C52,Caps 75 C,Script flag Rheinfall,3.80,500,Caps,/products/caps/C75.jpg
+C53,Caps 76 C,Script flag Bern,3.80,500,Caps,/products/caps/C76.jpg
+C54,Caps 77 C,Script flag Crans-Montana,3.80,500,Caps,/products/caps/C77.jpg
+C55,Caps 78 C,Script flag Interlaken,3.80,500,Caps,/products/caps/C78.jpg
+C56,Caps 79 C,Script flag Luzern,3.80,500,Caps,/products/caps/C79.jpg
+C57,Caps 80 C,Script flag Zürich,3.80,500,Caps,/products/caps/C80.jpg
+C58,Caps 81 C,Switzerland black/purple,3.80,500,Caps,/products/caps/C81.jpg
+C59,Caps 82 C,Switzerland beige/red,3.80,500,Caps,/products/caps/C82.jpg
+C60,Caps 83 C,Script flag salmon/denim,3.80,500,Caps,/products/caps/C83.jpg
+C61,Caps 84 C,Switzerland white,3.80,500,Caps,/products/caps/C84.jpg
+C62,Caps 85 C,Switzerland white,3.80,500,Caps,/products/caps/C85.jpg
+C63,Caps 86 C,Trucker - Switzerland black,3.50,500,Caps,/products/caps/C86.jpg
+C64,Caps 87 C,Trucker - Patch Switzerland black/beige,3.50,500,Caps,/products/caps/C87.jpg
+C65,Caps 88 C,Trucker - Switzerland blacky/beige,3.50,500,Caps,/products/caps/C88.jpg

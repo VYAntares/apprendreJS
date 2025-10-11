@@ -1,0 +1,21 @@
+id,name,description,price,stock,category,image_path
+P1,Patches 63,Switzerland shield,1.50,500,Patches,/products/patches/Patches63.jpg
+P2,Patches 64,Lausanne coat of arm bronze,1.50,500,Patches,/products/patches/Patches64.jpg
+P3,Patches 65,Lausanne cathedral edelweiss,1.50,500,Patches,/products/patches/Patches65.jpg
+P4,Patches 66,vaud coat of arm,1.50,500,Patches,/products/patches/Patches66.jpg
+P5,Patches 67,edelweiss swiss flag,1.50,500,Patches,/products/patches/Patches67.jpg
+P6,Patches 68,Lausanne coat of arm lions,1.50,500,Patches,/products/patches/Patches68.jpg
+P7,Patches 70,lausanne catehdral round,1.50,500,Patches,/products/patches/Patches70.jpg
+P8,Patches 71,swiss shaped patch white cross,1.50,500,Patches,/products/patches/Patches71.jpg
+P9,Patches 73,Gruyères coat of arm,1.50,500,Patches,/products/patches/Patches73.jpg
+P10,Patches 74,swiss coat of arm,1.50,500,Patches,/products/patches/Patches74.jpg
+P11,Patches 75,Bern coat of arm,1.50,500,Patches,/products/patches/Patches75.jpg
+P12,Patches 76,Genève coat of arm,1.50,500,Patches,/products/patches/Patches76.jpg
+P13,Patches 77,Valais coat of arm,1.50,500,Patches,/products/patches/Patches77.jpg
+P14,Patches 78,Swiss and States coat of arm,1.50,500,Patches,/products/patches/Patches78.jpg
+P15,Patches 91,Swiss ski school,1.00,500,Patches,/products/patches/Patches91.jpg
+P16,Patches 92,Swiss coat of arm,1.50,500,Patches,/products/patches/Patches92.jpg
+P17,Patches 93,Swiss army shaped,1.50,500,Patches,/products/patches/Patches93.jpg
+P18,Patches 137,Swiss rectangular flag,2.00,500,Patches,/products/patches/Patches137.jpg
+P19,Patches 138,Zermatt Matterhorn crown,2.00,500,Patches,/products/patches/Patches138.jpg
+P20,Patches 139,Swiss square flag,2.00,500,Patches,/products/patches/Patches139.jpg
