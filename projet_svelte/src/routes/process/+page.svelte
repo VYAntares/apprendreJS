@@ -29,7 +29,9 @@
     
     clientName = order.username;
     orderDate = new Date(order.created_at).toLocaleString('fr-FR');
-    items = order.items;
+    
+    // On ajoute une propriété 'processed' initialisée à 0 pour chaque item
+    items = order.items.map(item => ({ ...item, processed: 0 }));
   });
 
   async function handleLogout() {
@@ -42,15 +44,11 @@
   }
 
   async function handleSubmit(event) {
-    const formData = new FormData(event.target);
-    const processedQuantities = {};
-    
-    for (const [key, value] of formData.entries()) {
-      if (key.startsWith('item_')) {
-        const itemId = key.replace('item_', '');
-        processedQuantities[itemId] = parseInt(value);
-      }
-    }
+    // Récupérer les quantités traitées depuis les items liés à processed
+    const processedQuantities = items.reduce((acc, item) => {
+      acc[item.id] = parseInt(item.processed) || 0;
+      return acc;
+    }, {});
     
     const response = await fetch(`/api/orders/${orderId}/process`, {
       method: 'POST',
@@ -106,14 +104,37 @@
               <td data-label="Article">{item.name}</td>
               <td data-label="Demandée">{item.quantity}</td>
               <td data-label="Traitée">
-                <input 
-                  type="number" 
-                  name="item_{item.id}" 
-                  min="0" 
-                  max={item.quantity} 
-                  value={item.quantity}
-                  aria-label={`Quantité traitée pour ${item.name}`}
-                >
+                <div class="quantity-input-wrapper">
+                  <input
+                    type="number"
+                    inputmode="numeric"
+                    pattern="[0-9]*"
+                    name="item_{item.id}"
+                    bind:value={item.processed}
+                    placeholder="0"
+                    min="0"
+                    max={item.quantity}
+                    on:focus={(e) => {
+                      if (e.target.value === '0') e.target.value = '';
+                    }}
+                    aria-label={`Quantité traitée pour ${item.name}`}
+                  />
+
+                  <div class="action-buttons">
+                    <button
+                      type="button"
+                      title="Mettre 0"
+                      on:click={() => item.processed = 0}
+                      class="btn tiny danger"
+                    >✕</button>
+                    <button
+                      type="button"
+                      title="Mettre tout"
+                      on:click={() => item.processed = item.quantity}
+                      class="btn tiny success"
+                    >✓</button>
+                  </div>
+                </div>
               </td>
             </tr>
           {/each}
@@ -223,20 +244,60 @@
     background-color: #f3f4f6;
   }
 
-  input[type="number"] {
-    width: 70px;
-    padding: 0.3rem 0.5rem;
+  /* --- Nouveau style pour input + boutons --- */
+  .quantity-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .quantity-input-wrapper input {
+    width: 60px;
+    padding: 0.4rem;
     font-size: 1rem;
-    border: 1px solid #cbd5e1;
-    border-radius: 4px;
     text-align: center;
+    border-radius: 4px;
+    border: 1px solid #cbd5e1;
     transition: border-color 0.2s ease;
   }
 
-  input[type="number"]:focus {
+  .quantity-input-wrapper input:focus {
     outline: none;
     border-color: #2563eb;
     box-shadow: 0 0 4px #2563eb;
+  }
+
+  .action-buttons {
+    display: flex;
+    gap: 0.3rem;
+  }
+
+  .btn.tiny {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .btn.tiny.success {
+    background-color: #16a34a;
+    color: white;
+  }
+
+  .btn.tiny.success:hover {
+    background-color: #15803d;
+  }
+
+  .btn.tiny.danger {
+    background-color: #dc2626;
+    color: white;
+  }
+
+  .btn.tiny.danger:hover {
+    background-color: #b91c1c;
   }
 
   .submit-btn {
