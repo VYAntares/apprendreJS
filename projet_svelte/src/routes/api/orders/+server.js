@@ -17,15 +17,28 @@ export async function POST({ request, locals }) {
 
   try {
     const insertOrder = db.prepare('INSERT INTO orders (user_id, status) VALUES (?, ?)');
-    const insertOrderItem = db.prepare('INSERT INTO order_items (order_id, product_id, quantity) VALUES (?, ?, ?)');
+    const insertOrderItem = db.prepare('INSERT INTO order_items (order_id, product_id, quantity, unit_price) VALUES (?, ?, ?, ?)');
+    const getProduct = db.prepare('SELECT price FROM products WHERE id = ?');
     
     const transaction = db.transaction((userId, items) => {
       const result = insertOrder.run(userId, 'pending');
       const orderId = result.lastInsertRowid;
       
+      let totalAmount = 0;
+      
       for (const item of items) {
-        insertOrderItem.run(orderId, item.product_id, item.quantity);
+        // Récupérer le prix du produit
+        const product = getProduct.get(item.product_id);
+        const unitPrice = product ? product.price : 0;
+        
+        // Insérer l'item avec le prix
+        insertOrderItem.run(orderId, item.product_id, item.quantity, unitPrice);
+        
+        totalAmount += unitPrice * item.quantity;
       }
+      
+      // Mettre à jour le montant total de la commande
+      db.prepare('UPDATE orders SET total_amount = ? WHERE id = ?').run(totalAmount, orderId);
       
       return orderId;
     });
@@ -33,6 +46,7 @@ export async function POST({ request, locals }) {
     const orderId = transaction(locals.session.userId, validItems);
     return json({ success: true, orderId });
   } catch (error) {
-    return json({ message: 'Erreur lors de la création de la commande' }, { status: 500 });
+    console.error('Erreur création commande:', error);
+    return json({ message: 'Erreur lors de la création de la commande: ' + error.message }, { status: 500 });
   }
 }

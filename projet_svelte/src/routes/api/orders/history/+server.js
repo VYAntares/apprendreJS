@@ -7,7 +7,8 @@ export async function GET({ locals }) {
   }
 
   const orders = db.prepare(`
-    SELECT o.id, o.processed_at, u.username
+    SELECT o.id, o.total_amount, u.username,
+           DATE(o.processed_at) as processed_at
     FROM orders o
     JOIN users u ON o.user_id = u.id
     WHERE o.status = 'processed'
@@ -16,7 +17,7 @@ export async function GET({ locals }) {
 
   const ordersWithItems = orders.map(order => {
     const items = db.prepare(`
-      SELECT oi.quantity, p.name
+      SELECT oi.quantity, oi.unit_price, p.name
       FROM order_items oi
       JOIN products p ON oi.product_id = p.id
       WHERE oi.order_id = ?

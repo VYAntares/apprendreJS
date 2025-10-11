@@ -7,7 +7,8 @@ export async function GET({ params, locals }) {
   }
 
   const order = db.prepare(`
-    SELECT o.id, o.created_at, u.username, o.status
+    SELECT o.id, o.status, o.total_amount, o.notes, u.username,
+           DATE(o.created_at) as created_at
     FROM orders o
     JOIN users u ON o.user_id = u.id
     WHERE o.id = ?
@@ -18,7 +19,7 @@ export async function GET({ params, locals }) {
   }
 
   const items = db.prepare(`
-    SELECT oi.id, oi.quantity, p.name, p.description, oi.product_id
+    SELECT oi.id, oi.quantity, oi.unit_price, p.name, p.description, oi.product_id
     FROM order_items oi
     JOIN products p ON oi.product_id = p.id
     WHERE oi.order_id = ?

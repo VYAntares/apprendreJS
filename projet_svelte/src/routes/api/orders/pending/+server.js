@@ -7,7 +7,8 @@ export async function GET({ locals }) {
   }
 
   const orders = db.prepare(`
-    SELECT o.id, o.created_at, u.username, o.status
+    SELECT o.id, o.status, o.total_amount, u.username,
+           DATE(o.created_at) as created_at
     FROM orders o
     JOIN users u ON o.user_id = u.id
     WHERE o.status = 'pending'

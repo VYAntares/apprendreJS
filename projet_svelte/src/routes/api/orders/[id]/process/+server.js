@@ -11,18 +11,31 @@ export async function POST({ params, request, locals }) {
   try {
     const updateOrder = db.prepare('UPDATE orders SET status = ?, processed_at = CURRENT_TIMESTAMP WHERE id = ?');
     const updateOrderItem = db.prepare('UPDATE order_items SET quantity = ? WHERE id = ?');
+    const getOrderItem = db.prepare('SELECT quantity, unit_price FROM order_items WHERE id = ?');
     
     const transaction = db.transaction((orderId, quantities) => {
-      updateOrder.run('processed', orderId);
+      // Recalculer le montant total basé sur les quantités traitées
+      let newTotal = 0;
       
       for (const [itemId, quantity] of Object.entries(quantities)) {
-        updateOrderItem.run(quantity, itemId);
+        const item = getOrderItem.get(itemId);
+        if (item) {
+          updateOrderItem.run(quantity, itemId);
+          newTotal += item.unit_price * quantity;
+        }
       }
+      
+      // Mettre à jour la commande
+      updateOrder.run('processed', orderId);
+      
+      // Mettre à jour le montant total
+      db.prepare('UPDATE orders SET total_amount = ? WHERE id = ?').run(newTotal, orderId);
     });
     
     transaction(params.id, processedQuantities);
     return json({ success: true });
   } catch (error) {
-    return json({ message: 'Erreur lors du traitement de la commande' }, { status: 500 });
+    console.error('Erreur traitement commande:', error);
+    return json({ message: 'Erreur lors du traitement de la commande: ' + error.message }, { status: 500 });
   }
 }

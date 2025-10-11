@@ -1,4 +1,5 @@
-import db from '$lib/server/db';
+// NE PAS IMPORTER db ici si tu ne l'utilises pas
+// import db from '$lib/server/db';  ← ENLÈVE CETTE LIGNE
 
 // Store simple en mémoire pour les sessions (comme express-session)
 const sessions = new Map();
@@ -26,6 +27,7 @@ export async function handle({ event, resolve }) {
       event.cookies.set('sessionId', sid, {
         path: '/',
         httpOnly: true,
+        sameSite: 'lax',
         maxAge: 60 * 60 * 24 // 24 heures
       });
     }
