@@ -10,7 +10,7 @@ export async function GET({ locals }) {
   // Requête avec JOIN pour récupérer users + profils + adresse par défaut
   const users = db.prepare(`
     SELECT 
-      u.id, u.username, u.role,
+      u.id, u.username, u.role, u.created_at,
       p.first_name, p.last_name, p.email, p.phone,
       a.city, a.country
     FROM users u

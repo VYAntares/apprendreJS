@@ -44,7 +44,7 @@ db.exec(`
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
   );
 
-  -- Table des produits (MODIFIÉE)
+  -- Table des produits
   CREATE TABLE IF NOT EXISTS products (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
@@ -82,6 +82,20 @@ db.exec(`
     FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE,
     FOREIGN KEY (product_id) REFERENCES products(id)
   );
+
+  -- Table des articles en attente de livraison
+  CREATE TABLE IF NOT EXISTS pending_deliveries (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL,
+    product_id INTEGER NOT NULL,
+    product_name TEXT NOT NULL,
+    quantity INTEGER NOT NULL,
+    unit_price REAL NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (product_id) REFERENCES products(id)
+  );
 `);
 
 // Créer uniquement un admin par défaut si aucun utilisateur n'existe
@@ -113,7 +127,7 @@ const productCount = db.prepare('SELECT COUNT(*) as count FROM products').get();
 if (productCount.count === 0) {
   console.log('\n🔄 Chargement des produits depuis les fichiers CSV...');
   try {
-    loadProductsFromCSV(db);  // ← Passer db en paramètre
+    loadProductsFromCSV(db);
   } catch (error) {
     console.error('❌ Erreur lors du chargement des produits:', error.message);
     console.log('⚠️  Assurez-vous que le dossier data/ existe avec des fichiers CSV');

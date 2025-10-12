@@ -17,6 +17,10 @@
 		"vite": "^7.0.4"
 	},
 	"dependencies": {
-		"better-sqlite3": "^12.4.1"
+		"@fullcalendar/core": "^6.1.19",
+		"@fullcalendar/daygrid": "^6.1.19",
+		"@fullcalendar/interaction": "^6.1.19",
+		"better-sqlite3": "^12.4.1",
+		"pdfkit": "^0.17.2"
 	}
 }
