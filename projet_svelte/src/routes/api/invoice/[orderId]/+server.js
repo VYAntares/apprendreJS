@@ -17,6 +17,7 @@ export async function GET({ params, locals }) {
       o.created_at,
       o.processed_at,
       o.total_amount,
+      o.user_id,
       u.username
     FROM orders o
     JOIN users u ON o.user_id = u.id
@@ -27,16 +28,28 @@ export async function GET({ params, locals }) {
     throw error(404, 'Commande non trouvée');
   }
 
-  // Récupérer les articles
+  // Récupérer TOUS les articles (livrés ET non livrés)
   const items = db.prepare(`
     SELECT 
       oi.quantity, 
       oi.unit_price,
+      p.id as product_id,
       p.name
     FROM order_items oi
     JOIN products p ON oi.product_id = p.id
     WHERE oi.order_id = ?
   `).all(orderId);
+
+  // Récupérer les articles en attente de livraison pour ce client
+  const pendingItems = db.prepare(`
+    SELECT 
+      pd.product_id,
+      pd.product_name as name,
+      pd.quantity,
+      pd.unit_price
+    FROM pending_deliveries pd
+    WHERE pd.user_id = ?
+  `).all(order.user_id);
 
   // Récupérer le profil utilisateur
   const userProfile = db.prepare(`
@@ -50,8 +63,8 @@ export async function GET({ params, locals }) {
       ua.country
     FROM user_profiles up
     LEFT JOIN user_addresses ua ON up.user_id = ua.user_id AND ua.is_default = 1
-    WHERE up.user_id = (SELECT user_id FROM orders WHERE id = ?)
-  `).get(orderId);
+    WHERE up.user_id = ?
+  `).get(order.user_id);
 
   // Créer le PDF
   const doc = new PDFDocument();
@@ -60,10 +73,11 @@ export async function GET({ params, locals }) {
   doc.on('data', (chunk) => chunks.push(chunk));
   doc.on('end', () => {});
 
-  // Générer la facture
+  // Générer la facture avec TOUS les items et les pending
   await InvoiceService.generateInvoicePDF(
     doc,
-    items,
+    items,           // Tous les articles de la commande
+    pendingItems,    // Articles en attente
     userProfile || {},
     new Date(order.created_at),
     order.id

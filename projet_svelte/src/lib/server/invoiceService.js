@@ -6,19 +6,29 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 class InvoiceService {
-  static async generateInvoicePDF(doc, orderItems, userProfile, orderDate, orderId) {
+  static async generateInvoicePDF(doc, orderItems, pendingItems, userProfile, orderDate, orderId) {
     if (doc.page.content && doc.page.content.length > 0) {
       doc = new PDFDocument({ autoFirstPage: true });
     }
     
-    const { totals, finalYPosition } = await this.generateItemsPage(doc, orderItems, userProfile, orderDate, orderId);
+    // Séparer les articles livrés et non livrés
+    const deliveredItems = orderItems.filter(item => item.quantity > 0);
     
+    // PAGE 1: Bon de livraison (quantités sans prix)
+    await this.generateDeliveryNotePage(doc, deliveredItems, userProfile, orderDate, orderId);
+    
+    // PAGE 2+: Facture détaillée (avec prix)
+    doc.addPage();
+    const { totals } = await this.generateItemsPage(doc, deliveredItems, userProfile, orderDate, orderId);
+    
+    // PAGE FINALE: Articles en attente + Bulletin de versement
     doc.addPage();
     await this.generateTotalPage(doc, {
       ...totals,
       orderDate,
       orderId,
-      userProfile
+      userProfile,
+      pendingItems
     });
     
     return totals;
@@ -34,16 +44,16 @@ class InvoiceService {
     return `${year}${month}-${day}${hour}`;
   }
 
-  static async generateItemsPage(doc, orderItems, userProfile, orderDate, orderId) {
+  // PAGE 1: BON DE LIVRAISON (sans prix)
+  static async generateDeliveryNotePage(doc, deliveredItems, userProfile, orderDate, orderId) {
     const addHeaderElement = (text, x, y, options = {}) => {
       doc.font('Helvetica').fontSize(9).text(text, x, y, options);
     };
 
-    const addInvoiceHeader = () => {
+    const addHeader = () => {
       const rootDir = path.resolve(process.cwd());
       const logoPath = path.join(rootDir, 'static', 'images', 'logo_discado_noir.png');
       
-      // Vérifier si le logo existe, sinon continuer sans
       try {
         doc.image(logoPath, 50, 35, { width: 90 });
       } catch (e) {
@@ -75,8 +85,146 @@ class InvoiceService {
       const formattedOrderId = this.formatOrderId(orderId, orderDate);
       const titleY = senderY + lineSpacing * 11;
       
-      doc.font('Helvetica-Bold').fontSize(14).text(`Invoice ${formattedOrderId}`, 50, titleY + 5);
-      addHeaderElement(`Invoice date: ${orderDate.toLocaleDateString('fr-FR')}`, 50, titleY + 40);
+      doc.font('Helvetica-Bold').fontSize(14).text(`Bon de livraison ${formattedOrderId}`, 50, titleY + 5);
+      addHeaderElement(`Date: ${orderDate.toLocaleDateString('fr-FR')}`, 50, titleY + 40);
+
+      return titleY + 60;
+    };
+
+    const createTableHeader = (startY) => {
+      const columns = [
+        { title: 'Description', width: 400, align: 'left' },
+        { title: 'Quantité', width: 100, align: 'center' }
+      ];
+      
+      const tableX = 50;
+      const tableWidth = columns.reduce((sum, col) => sum + col.width, 0);
+      
+      doc.rect(tableX, startY, tableWidth, 25).stroke();
+      
+      let currentX = tableX;
+      doc.font('Helvetica-Bold').fontSize(10);
+      
+      columns.forEach((col, index) => {
+        if (index > 0) {
+          doc.moveTo(currentX, startY).lineTo(currentX, startY + 25).stroke();
+        }
+        
+        doc.text(col.title, currentX + 5, startY + 8, {
+          width: col.width - 10,
+          align: col.align
+        });
+        
+        currentX += col.width;
+      });
+      
+      return { yPosition: startY + 25, columns, tableX, tableWidth };
+    };
+
+    const addTableRow = (item, category, rowY, isCategory, tableConfig) => {
+      const { tableX, columns, tableWidth } = tableConfig;
+      const rowHeight = 20;
+      
+      doc.rect(tableX, rowY, tableWidth, rowHeight).stroke();
+      
+      let currentX = tableX;
+      
+      if (isCategory) {
+        doc.font('Helvetica-Bold').fontSize(9);
+        doc.fillColor('#f0f0f0');
+        doc.rect(tableX, rowY, tableWidth, rowHeight).fill();
+        doc.fillColor('black');
+        doc.text(category.charAt(0).toUpperCase() + category.slice(1), currentX + 5, rowY + 6, {
+          width: tableWidth - 10
+        });
+      } else {
+        doc.font('Helvetica').fontSize(9);
+        
+        doc.text(item.name, currentX + 5, rowY + 6, {
+          width: columns[0].width - 10,
+          align: columns[0].align
+        });
+        currentX += columns[0].width;
+        
+        doc.moveTo(currentX, rowY).lineTo(currentX, rowY + rowHeight).stroke();
+        
+        doc.text(String(item.quantity), currentX + 5, rowY + 6, {
+          width: columns[1].width - 10,
+          align: columns[1].align
+        });
+      }
+      
+      return rowY + rowHeight;
+    };
+
+    let yPos = addHeader();
+    const tableConfig = createTableHeader(yPos);
+    yPos = tableConfig.yPosition;
+    
+    // Grouper par catégorie
+    const groupedItems = {};
+    deliveredItems.forEach(item => {
+      const category = item.name.split(' ')[0] || 'autres';
+      if (!groupedItems[category]) {
+        groupedItems[category] = [];
+      }
+      groupedItems[category].push(item);
+    });
+    
+    const sortedCategories = Object.keys(groupedItems).sort();
+    
+    for (const category of sortedCategories) {
+      yPos = addTableRow(null, category, yPos, true, tableConfig);
+      
+      for (const item of groupedItems[category]) {
+        yPos = addTableRow(item, category, yPos, false, tableConfig);
+      }
+    }
+  }
+
+  // PAGE 2+: FACTURE DÉTAILLÉE (avec prix)
+  static async generateItemsPage(doc, orderItems, userProfile, orderDate, orderId) {
+    const addHeaderElement = (text, x, y, options = {}) => {
+      doc.font('Helvetica').fontSize(9).text(text, x, y, options);
+    };
+
+    const addInvoiceHeader = () => {
+      const rootDir = path.resolve(process.cwd());
+      const logoPath = path.join(rootDir, 'static', 'images', 'logo_discado_noir.png');
+      
+      try {
+        doc.image(logoPath, 50, 35, { width: 90 });
+      } catch (e) {
+        console.warn('Logo non trouvé:', logoPath);
+      }
+
+      const senderY = 50;
+      const lineSpacing = 12;
+      
+      addHeaderElement('Discado Sàrl', 50, senderY + lineSpacing * 1);
+      addHeaderElement('Sevelin 4A', 50, senderY + lineSpacing * 2);
+      addHeaderElement('1007 Lausanne', 50, senderY + lineSpacing * 3);
+      addHeaderElement('+41 79 457 33 85', 50, senderY + lineSpacing * 4);
+      addHeaderElement('+41 78 343 36 31', 50, senderY + lineSpacing * 5);
+      addHeaderElement('catalog.discado@gmail.com', 50, senderY + lineSpacing * 6);
+      addHeaderElement('TVA CHE-114.139.308', 50, senderY + lineSpacing * 8);
+
+      const clientStartY = senderY + lineSpacing * 7;
+      
+      addHeaderElement(`${userProfile.first_name || ''} ${userProfile.last_name || ''}`, 350, clientStartY);
+      addHeaderElement(userProfile.email || '', 350, clientStartY + lineSpacing * 1);
+      addHeaderElement(userProfile.street || '', 350, clientStartY + lineSpacing * 2);
+      addHeaderElement(
+        `${userProfile.postal_code || ''} ${userProfile.city || ''}`,
+        350,
+        clientStartY + lineSpacing * 3
+      );
+
+      const formattedOrderId = this.formatOrderId(orderId, orderDate);
+      const titleY = senderY + lineSpacing * 11;
+      
+      doc.font('Helvetica-Bold').fontSize(14).text(`Facture ${formattedOrderId}`, 50, titleY + 5);
+      addHeaderElement(`Date de facture: ${orderDate.toLocaleDateString('fr-FR')}`, 50, titleY + 40);
 
       return titleY + 60;
     };
@@ -84,8 +232,8 @@ class InvoiceService {
     const createTableHeader = (startY) => {
       const columns = [
         { title: 'Description', width: 230, align: 'left' },
-        { title: 'Quantity', width: 70, align: 'center' },
-        { title: 'Unit Price', width: 100, align: 'right' },
+        { title: 'Quantité', width: 70, align: 'center' },
+        { title: 'Prix unitaire', width: 100, align: 'right' },
         { title: 'Total', width: 100, align: 'right' }
       ];
       
@@ -110,12 +258,7 @@ class InvoiceService {
         currentX += col.width;
       });
       
-      return { 
-        yPosition: startY + 25, 
-        columns, 
-        tableX, 
-        tableWidth
-      };
+      return { yPosition: startY + 25, columns, tableX, tableWidth };
     };
 
     const addTableRow = (item, category, rowY, isCategory = false, tableConfig) => {
@@ -289,7 +432,7 @@ class InvoiceService {
     
     yPos += 20;
     doc.font('Helvetica-Bold').fontSize(10);
-    doc.text('See next page for the payment slip.', 50, yPos);
+    doc.text('Voir page suivante pour les articles en attente et le bulletin de versement.', 50, yPos);
     
     return {
       totals: {
@@ -301,8 +444,9 @@ class InvoiceService {
     };
   }
 
+  // PAGE FINALE: ARTICLES EN ATTENTE + BULLETIN
   static async generateTotalPage(doc, invoiceData) {
-    const { totalHT, montantTVA, totalTTC, orderDate, orderId, userProfile } = invoiceData;
+    const { totalHT, montantTVA, totalTTC, orderDate, orderId, userProfile, pendingItems } = invoiceData;
     
     const formattedOrderId = this.formatOrderId(orderId, orderDate);
     
@@ -344,10 +488,60 @@ class InvoiceService {
 
       const titleY = senderY + lineSpacing * 12;
       
-      doc.font('Helvetica-Bold').fontSize(14).text(`Invoice ${formattedOrderId}`, 50, titleY + 5);
+      doc.font('Helvetica-Bold').fontSize(14).text(`Facture ${formattedOrderId}`, 50, titleY + 5);
       doc.font('Helvetica').fontSize(10).text(`Date: ${orderDate.toLocaleDateString('fr-FR')}`, 50, titleY + 25);
 
       return titleY + 60;
+    };
+
+    const addPendingItemsSection = (yPosition) => {
+      if (!pendingItems || pendingItems.length === 0) {
+        return yPosition;
+      }
+
+      let yPos = yPosition;
+
+      // Titre
+      doc.font('Helvetica-Bold').fontSize(11).fillColor('#FF6B00');
+      doc.text('ARTICLES EN ATTENTE DE LIVRAISON', 50, yPos);
+      yPos += 20;
+
+      // Grouper par catégorie
+      const groupedPending = {};
+      pendingItems.forEach(item => {
+        const category = item.name.split(' ')[0] || 'autres';
+        if (!groupedPending[category]) {
+          groupedPending[category] = [];
+        }
+        groupedPending[category].push(item);
+      });
+
+      const sortedCategories = Object.keys(groupedPending).sort();
+
+      doc.font('Helvetica').fontSize(9).fillColor('black');
+
+      for (const category of sortedCategories) {
+        // Nom de catégorie
+        doc.font('Helvetica-Bold').fontSize(9);
+        doc.text(`${category.charAt(0).toUpperCase() + category.slice(1)}:`, 50, yPos);
+        yPos += 15;
+
+        // Articles
+        doc.font('Helvetica').fontSize(9);
+        for (const item of groupedPending[category]) {
+          doc.text(`• ${item.name} - Quantité: ${item.quantity}`, 70, yPos);
+          yPos += 12;
+        }
+        yPos += 5;
+      }
+
+      yPos += 10;
+      doc.font('Helvetica-Oblique').fontSize(8).fillColor('#666666');
+      doc.text('Ces articles seront livrés ultérieurement.', 50, yPos);
+      yPos += 30;
+
+      doc.fillColor('black');
+      return yPos;
     };
 
     const addSimpleTotalLine = (yPosition) => {
@@ -363,7 +557,7 @@ class InvoiceService {
       doc.text(`TOTAL TTC: ${totalTTC.toFixed(2)} CHF`, horizontalCenter - 90, centerY);
       
       doc.font('Helvetica-Bold').fontSize(10);
-      doc.text('PAYMENT TERMS: net 30 days', horizontalCenter - 95, centerY + 50);
+      doc.text('DÉLAI DE PAIEMENT: net 30 jours', horizontalCenter - 105, centerY + 50);
       
       return centerY + 50;
     };
@@ -393,8 +587,15 @@ class InvoiceService {
       }
     };
 
-    const headerEndY = addInvoiceHeader();
-    const totalLineEndY = addSimpleTotalLine(headerEndY);
+    let yPos = addInvoiceHeader();
+    
+    // Ajouter la section des articles en attente
+    yPos = addPendingItemsSection(yPos);
+    
+    // Ajouter le total
+    const totalLineEndY = addSimpleTotalLine(yPos);
+    
+    // Ajouter le bulletin de versement
     addPaymentSlip();
   }
 }

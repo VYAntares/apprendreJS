@@ -107,9 +107,19 @@
     const res = await fetch(`/api/orders/${orderId}`);
     if (res.ok) {
       const orderData = await res.json();
-      // Grouper les articles par catégorie
-      const itemsByCategory = groupItemsByCategory(orderData.items);
-      selectedOrder = { ...orderData, itemsByCategory };
+      
+      // Séparer les articles livrés (quantity > 0) et en attente (quantity === 0)
+      const deliveredItems = orderData.items.filter(item => item.quantity > 0);
+      const pendingItems = orderData.items.filter(item => item.quantity === 0);
+      
+      // Grouper les articles livrés par catégorie
+      const itemsByCategory = groupItemsByCategory(deliveredItems);
+      
+      selectedOrder = { 
+        ...orderData, 
+        itemsByCategory,
+        pendingItems
+      };
     }
   }
 
@@ -185,7 +195,7 @@
     <p><strong>Date de traitement:</strong> {selectedOrder.processed_at ? new Date(selectedOrder.processed_at).toLocaleString('fr-FR') : '-'}</p>
     <p><strong>Statut:</strong> {selectedOrder.status}</p>
     
-    <h3>Articles commandés par catégorie</h3>
+    <h3>Articles livrés par catégorie</h3>
     
     {#each Object.entries(selectedOrder.itemsByCategory) as [category, items]}
       <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0; background-color: white;">
@@ -219,9 +229,22 @@
       </div>
     {/each}
     
+    <!-- Section des articles en attente -->
+    {#if selectedOrder.pendingItems && selectedOrder.pendingItems.length > 0}
+      <div style="border: 2px solid #FF6B00; padding: 15px; margin: 10px 0; background-color: #FFF5E6;">
+        <h4 style="color: #FF6B00;">⚠️ Articles en attente de livraison</h4>
+        <ul>
+          {#each selectedOrder.pendingItems as item}
+            <li><strong>{item.name}</strong> (Prix unitaire: CHF {item.unit_price.toFixed(2)})</li>
+          {/each}
+        </ul>
+        <p style="font-style: italic; color: #666;">Ces articles n'ont pas été livrés et sont en attente.</p>
+      </div>
+    {/if}
+    
     <hr>
     <p style="font-size: 1.2em;">
-      <strong>TOTAL GÉNÉRAL: CHF {selectedOrder.total_amount.toFixed(2)}</strong>
+      <strong>TOTAL GÉNÉRAL (articles livrés): CHF {selectedOrder.total_amount.toFixed(2)}</strong>
     </p>
     
     <div style="margin-top: 20px;">

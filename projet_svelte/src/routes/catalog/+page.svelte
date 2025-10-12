@@ -50,36 +50,45 @@
   }
 
   async function handleSubmit() {
-    const items = Object.entries(cart).map(([product_id, quantity]) => ({
-      product_id: parseInt(product_id),
-      quantity
-    }));
-    
-    if (items.length === 0) {
-      alert('Veuillez sélectionner au moins un article');
-      return;
-    }
-    
-    const response = await fetch('/api/orders', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ items })
-    });
-    
-    if (response.ok) {
-      message = 'Commande envoyée avec succès!';
-      cart = {};
-      
-      // Recharger les produits pour mettre à jour le stock
-      selectCategory(selectedCategory);
-      
-      setTimeout(() => {
-        message = '';
-      }, 3000);
-    } else {
-      alert('Erreur lors de l\'envoi de la commande');
-    }
+  const items = Object.entries(cart).map(([product_id, quantity]) => ({
+    product_id: parseInt(product_id),
+    quantity
+  }));
+  
+  if (items.length === 0) {
+    alert('Veuillez sélectionner au moins un article');
+    return;
   }
+  
+  const response = await fetch('/api/orders', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ items })
+  });
+  
+  if (response.ok) {
+    const data = await response.json();
+    
+    // Afficher un message différent selon si la commande a été fusionnée ou non
+    if (data.merged) {
+      message = '✓ Commande fusionnée avec votre commande en attente! Les quantités ont été mises à jour.';
+    } else {
+      message = '✓ Commande envoyée avec succès!';
+    }
+    
+    cart = {};
+    
+    // Recharger les produits pour mettre à jour le stock
+    selectCategory(selectedCategory);
+    
+    setTimeout(() => {
+      message = '';
+    }, 5000);
+  } else {
+    const errorData = await response.json();
+    alert(errorData.message || 'Erreur lors de l\'envoi de la commande');
+  }
+}
 
   async function handleLogout() {
     await fetch('/api/logout', { method: 'POST' });
