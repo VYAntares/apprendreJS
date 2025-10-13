@@ -1,0 +1,62 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String   @id @default(uuid())
+  email         String   @unique
+  password      String
+  nom           String
+  prenom        String
+  adresse       String
+  codePostal    String
+  ville         String
+  pays          String
+  telephone     String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  subscription  Subscription?
+}
+
+model Subscription {
+  id                String   @id @default(uuid())
+  userId            String   @unique
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  plan              String   // "normal" ou "premium"
+  stripeCustomerId      String?
+  stripeSubscriptionId  String?
+  stripePriceId         String?
+  
+  status            String   // active, canceled, past_due
+  currentPeriodEnd  DateTime
+  
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+model Video {
+  id          String   @id @default(uuid())
+  titre       String
+  description String?
+  categorie   String
+  filename    String
+  duree       Int?     // en secondes
+  ordre       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Categorie {
+  id          String   @id @default(uuid())
+  nom         String   @unique
+  description String?
+  ordre       Int      @default(0)
+  createdAt   DateTime @default(now())
+}

@@ -1,0 +1,28 @@
+{
+	"name": "hebergement-video",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^6.1.1",
+		"@sveltejs/kit": "^2.43.2",
+		"@sveltejs/vite-plugin-svelte": "^6.2.0",
+		"@types/bcrypt": "^6.0.0",
+		"@types/jsonwebtoken": "^9.0.10",
+		"prisma": "^6.17.1",
+		"svelte": "^5.39.5",
+		"vite": "^7.1.7"
+	},
+	"dependencies": {
+		"@prisma/client": "^6.17.1",
+		"bcrypt": "^6.0.0",
+		"jsonwebtoken": "^9.0.2",
+		"stripe": "^19.1.0"
+	}
+}
